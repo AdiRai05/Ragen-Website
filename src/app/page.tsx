@@ -8,8 +8,7 @@ import { images } from '@/data/images';
 
 const stats = [
   { value: 40, suffix: '+', label: 'Projects shipped' },
-  { prefix: '8.', label: 'Avg. years per engineer' },
-  { value: 0, suffix: '', label: 'Junior-only teams' },
+  { value: 4, suffix: '+', label: 'Avg. years per engineer' },
   { value: 92, suffix: '%', label: 'Client return rate' },
 ];
 
@@ -79,12 +78,12 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-16">
             {stats.map((stat) => (
               <ScrollReveal key={stat.label} delay={0.1}>
                 <div className="text-center md:text-left">
                   <div className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-2">
-                    {stat.prefix || ''}{stat.value || ''}{stat.suffix || ''}
+                    {stat.value || ''}{stat.suffix || ''}
                   </div>
                   <div className="text-xs text-foreground-faint uppercase tracking-[0.15em]">{stat.label}</div>
                 </div>
