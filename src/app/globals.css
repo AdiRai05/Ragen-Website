@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --surface: #0D0D0D;
+    --surface-secondary: #151515;
+    --surface-elevated: #1A1A1A;
+    --stroke: #262626;
+    --stroke-subtle: #1F1F1F;
+    --foreground: #FFFFFF;
+    --foreground-muted: #A1A1AA;
+    --foreground-faint: #71717A;
+    --accent-blue: #3B82F6;
+    --accent-violet: #8B5CF6;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #262626 transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: #0D0D0D;
+  }
+
+  body {
+    background: var(--surface);
+    color: var(--foreground);
+    font-family: var(--font-inter), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgba(59, 130, 246, 0.3);
+    color: white;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-blue to-accent-violet bg-clip-text text-transparent;
+  }
+
+  .gradient-line {
+    @apply h-px bg-gradient-to-r from-accent-blue to-accent-violet border-0;
+  }
+
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.06];
+  }
+
+  .glass-hover {
+    @apply hover:bg-white/[0.05] hover:border-white/[0.1] transition-all duration-300;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .mask-fade-right {
+    mask-image: linear-gradient(to right, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
+  }
+
+  .mask-fade-left {
+    mask-image: linear-gradient(to left, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
+  }
+
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+}

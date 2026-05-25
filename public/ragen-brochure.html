@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ragen</title>
+<style>
+  @page { size: A4; margin: 0; }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #0f0f0f;
+    color: #f0ede8;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    background: #0f0f0f;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ========== COVER ========== */
+  .cover-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24mm 20mm 20mm 20mm;
+  }
+
+  .cover-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: auto;
+  }
+
+  .cover-agency {
+    font-size: 9pt;
+    font-weight: 400;
+    letter-spacing: 3pt;
+    text-transform: uppercase;
+    color: #7a7670;
+  }
+
+  .cover-year {
+    font-size: 8pt;
+    color: #5c5854;
+    letter-spacing: 1pt;
+  }
+
+  .cover-img {
+    width: 100%;
+    height: 42mm;
+    object-fit: cover;
+    margin-bottom: 5mm;
+    opacity: 0.7;
+    filter: grayscale(30%);
+  }
+
+  .cover-center {
+    margin: auto 0;
+    padding: 8mm 0;
+  }
+
+  .cover-line {
+    width: 18mm;
+    height: 1px;
+    background: #f0ede8;
+    margin-bottom: 9mm;
+  }
+
+  .cover h1 {
+    font-size: 46pt;
+    font-weight: 400;
+    letter-spacing: -1.5pt;
+    line-height: 0.95;
+    margin-bottom: 7mm;
+    color: #f0ede8;
+  }
+
+  .cover-tagline {
+    font-size: 11pt;
+    line-height: 1.45;
+    color: #8a8680;
+    max-width: 68%;
+    letter-spacing: -0.1pt;
+  }
+
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 6mm;
+    border-top: 1px solid #2a2724;
+  }
+
+  .cover-footer-left {
+    font-size: 7.5pt;
+    color: #5c5854;
+    line-height: 1.5;
+  }
+
+  .cover-footer-right {
+    font-size: 8pt;
+    color: #7a7670;
+    letter-spacing: 0.5pt;
+  }
+
+  /* ========== INTERIOR HEADER ========== */
+  .int-page {
+    padding: 20mm 20mm 18mm 20mm;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .int-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 11mm;
+    padding-bottom: 6mm;
+    border-bottom: 1px solid #2a2724;
+  }
+
+  .int-sec-num {
+    font-size: 8pt;
+    color: #5c5854;
+    letter-spacing: 2pt;
+  }
+
+  .int-sec-title {
+    font-size: 16pt;
+    font-weight: 400;
+    letter-spacing: -0.3pt;
+    text-align: right;
+    max-width: 55%;
+    line-height: 1.15;
+  }
+
+  .int-body {
+    flex: 1;
+  }
+
+  .int-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 7pt;
+    color: #423e3a;
+    letter-spacing: 1pt;
+    padding-top: 5mm;
+    border-top: 1px solid #1c1a18;
+    margin-top: auto;
+  }
+
+  .int-footer strong {
+    font-weight: 400;
+    color: #5c5854;
+  }
+
+  /* ========== INLINE IMAGE ========== */
+  .inline-img {
+    width: 100%;
+    height: 38mm;
+    object-fit: cover;
+    margin-bottom: 8mm;
+    opacity: 0.75;
+    filter: grayscale(25%);
+  }
+
+  .inline-img-sm {
+    width: 100%;
+    height: 28mm;
+    object-fit: cover;
+    margin-bottom: 7mm;
+    opacity: 0.7;
+    filter: grayscale(25%);
+  }
+
+  /* ========== ABOUT ========== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10mm;
+    margin-bottom: 9mm;
+  }
+
+  .about-lead {
+    font-size: 12pt;
+    line-height: 1.45;
+    color: #c4bfb8;
+    letter-spacing: -0.2pt;
+    margin-bottom: 8mm;
+    max-width: 80%;
+  }
+
+  .about-text {
+    font-size: 8.5pt;
+    line-height: 1.7;
+    color: #8a8680;
+  }
+
+  .about-text p {
+    margin-bottom: 3.5mm;
+  }
+
+  .about-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-stat {
+    border-left: 2px solid #f0ede8;
+    padding: 2mm 0 2mm 5mm;
+    margin: 8mm 0;
+  }
+
+  .about-stat-num {
+    font-size: 24pt;
+    letter-spacing: -1pt;
+    color: #f0ede8;
+    line-height: 1;
+    margin-bottom: 2mm;
+  }
+
+  .about-stat-label {
+    font-size: 8pt;
+    color: #7a7670;
+    line-height: 1.4;
+  }
+
+  /* ========== SERVICES ========== */
+  .svc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7mm 10mm;
+  }
+
+  .svc-card {
+    border: 1px solid #1c1a18;
+    padding: 5mm;
+  }
+
+  .svc-card-num {
+    font-size: 7pt;
+    color: #5c5854;
+    letter-spacing: 1pt;
+    margin-bottom: 2.5mm;
+  }
+
+  .svc-card h4 {
+    font-size: 10pt;
+    font-weight: 400;
+    letter-spacing: -0.2pt;
+    color: #f0ede8;
+    margin-bottom: 2mm;
+  }
+
+  .svc-card p {
+    font-size: 7.5pt;
+    line-height: 1.55;
+    color: #8a8680;
+  }
+
+  /* ========== WHY US ========== */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6mm 10mm;
+  }
+
+  .why-item {
+    border-top: 1px solid #1c1a18;
+    padding-top: 4mm;
+  }
+
+  .why-item h4 {
+    font-size: 10pt;
+    font-weight: 400;
+    letter-spacing: -0.2pt;
+    color: #f0ede8;
+    margin-bottom: 2mm;
+  }
+
+  .why-item p {
+    font-size: 7.5pt;
+    line-height: 1.55;
+    color: #8a8680;
+  }
+
+  /* ========== PROCESS ========== */
+  .proc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 10mm;
+  }
+
+  .proc-item {
+    display: flex;
+    gap: 4mm;
+    padding: 4mm 0;
+    border-bottom: 1px solid #1c1a18;
+  }
+
+  .proc-item:last-child {
+    border-bottom: none;
+  }
+
+  .proc-num {
+    font-size: 28pt;
+    letter-spacing: -1pt;
+    color: #f0ede8;
+    line-height: 0.8;
+    min-width: 12mm;
+  }
+
+  .proc-item h4 {
+    font-size: 9pt;
+    font-weight: 400;
+    letter-spacing: -0.1pt;
+    color: #f0ede8;
+    margin-bottom: 1.5mm;
+  }
+
+  .proc-item p {
+    font-size: 7.5pt;
+    line-height: 1.5;
+    color: #8a8680;
+  }
+
+  /* ========== TECH ========== */
+  .tech-section {
+    margin-bottom: 5mm;
+  }
+
+  .tech-section h5 {
+    font-size: 8pt;
+    color: #f0ede8;
+    letter-spacing: 2pt;
+    text-transform: uppercase;
+    margin-bottom: 3mm;
+    font-weight: 400;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2mm;
+  }
+
+  .tech-tag {
+    font-size: 7.5pt;
+    color: #8a8680;
+    border: 1px solid #1c1a18;
+    padding: 2mm 3mm;
+    letter-spacing: 0.2pt;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5mm 10mm;
+  }
+
+  /* ========== CASE STUDIES ========== */
+  .case-item {
+    border-left: 2px solid #f0ede8;
+    padding: 0 0 0 5mm;
+    margin-bottom: 6mm;
+  }
+
+  .case-img {
+    width: 100%;
+    height: 24mm;
+    object-fit: cover;
+    margin-bottom: 3.5mm;
+    opacity: 0.7;
+    filter: grayscale(30%);
+  }
+
+  .case-item h4 {
+    font-size: 10pt;
+    font-weight: 400;
+    letter-spacing: -0.2pt;
+    color: #f0ede8;
+    margin-bottom: 2mm;
+  }
+
+  .case-item .case-tags {
+    font-size: 7pt;
+    color: #5c5854;
+    letter-spacing: 1.5pt;
+    text-transform: uppercase;
+    margin-bottom: 2.5mm;
+  }
+
+  .case-item p {
+    font-size: 7.5pt;
+    line-height: 1.55;
+    color: #8a8680;
+  }
+
+  .case-result {
+    font-size: 8.5pt;
+    color: #c4bfb8;
+    margin-top: 2.5mm;
+    font-style: italic;
+  }
+
+  /* ========== TESTIMONIALS ========== */
+  .test-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5mm 10mm;
+  }
+
+  .test-card {
+    border: 1px solid #1c1a18;
+    padding: 5mm;
+  }
+
+  .test-card q {
+    font-size: 8pt;
+    font-style: italic;
+    line-height: 1.55;
+    color: #c4bfb8;
+    display: block;
+    margin-bottom: 3mm;
+  }
+
+  .test-card .attr {
+    font-size: 7pt;
+    color: #7a7670;
+    line-height: 1.4;
+  }
+
+  .test-card .attr strong {
+    color: #c4bfb8;
+    font-weight: 400;
+  }
+
+  /* ========== ENGAGEMENT ========== */
+  .eng-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5mm;
+  }
+
+  .eng-card {
+    border: 1px solid #1c1a18;
+    padding: 5mm;
+  }
+
+  .eng-card h4 {
+    font-size: 10pt;
+    font-weight: 400;
+    letter-spacing: -0.1pt;
+    color: #f0ede8;
+    margin-bottom: 2mm;
+  }
+
+  .eng-card .eng-label {
+    font-size: 7pt;
+    color: #5c5854;
+    text-transform: uppercase;
+    letter-spacing: 1.5pt;
+    margin-bottom: 3mm;
+  }
+
+  .eng-card p {
+    font-size: 7.5pt;
+    line-height: 1.55;
+    color: #8a8680;
+  }
+
+  /* ========== CONTACT ========== */
+  .contact-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20mm;
+  }
+
+  .contact-line {
+    width: 18mm;
+    height: 1px;
+    background: #f0ede8;
+    margin-bottom: 10mm;
+  }
+
+  .contact h2 {
+    font-size: 28pt;
+    font-weight: 400;
+    letter-spacing: -0.8pt;
+    line-height: 1.1;
+    margin-bottom: 6mm;
+    color: #f0ede8;
+  }
+
+  .contact p {
+    font-size: 9pt;
+    line-height: 1.6;
+    color: #8a8680;
+    max-width: 65%;
+    margin-bottom: 10mm;
+  }
+
+  .contact-info {
+    font-size: 9pt;
+    line-height: 1.8;
+    color: #c4bfb8;
+    margin-bottom: 10mm;
+  }
+
+  .contact-note {
+    font-size: 7pt;
+    color: #5c5854;
+    max-width: 60%;
+    line-height: 1.5;
+  }
+
+  /* ========== SECTION TITLE ========== */
+  .sect-title {
+    font-size: 8pt;
+    color: #5c5854;
+    letter-spacing: 3pt;
+    text-transform: uppercase;
+    margin-bottom: 7mm;
+  }
+
+  .sect-headline {
+    font-size: 16pt;
+    font-weight: 400;
+    letter-spacing: -0.3pt;
+    line-height: 1.15;
+    margin-bottom: 8mm;
+    max-width: 70%;
+  }
+
+  /* ========== PRINT ========== */
+  @media print {
+    body { background: #0f0f0f; }
+    .page { page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================================================
+     COVER
+     ================================================ -->
+<div class="page">
+  <div class="cover-body">
+    <div class="cover-top-row">
+      <div class="cover-agency">Ragen</div>
+      <div class="cover-year">Company Profile, 2026</div>
+    </div>
+    <img class="cover-img"
+         src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=85"
+         alt="" crossorigin="anonymous" />
+    <div class="cover-center">
+      <div class="cover-line"></div>
+      <h1>Software<br>engineering<br>for agencies</h1>
+      <div class="cover-tagline">
+        A development practice that operates as an invisible extension of your team. We build the software your clients need while you own the relationship.
+      </div>
+    </div>
+    <div class="cover-footer">
+      <div class="cover-footer-left">Confidential<br>For agency partners</div>
+      <div class="cover-footer-right">ragen.dev</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     ABOUT
+     ================================================ -->
+<div class="page">
+  <div class="int-page">
+    <div class="int-header">
+      <div class="int-sec-num">01 &mdash; About</div>
+      <div class="int-sec-title">A software practice built for how agencies actually work</div>
+    </div>
+    <div class="int-body">
+      <div class="about-lead">
+        We started Ragen after watching too many agencies struggle with the same problem: great client relationships, not enough engineering capacity to deliver at the pace those clients expect.
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Ragen solves this by operating as a dedicated development arm for digital agencies, design studios, and consulting firms. We handle the full engineering cycle &mdash; architecture, development, testing, deployment, and maintenance &mdash; while your team stays focused on client strategy, design direction, and business development.</p>
+          <p>We are deliberately small. Every engineer on a Ragen project brings at least five years of production experience. We hire for technical judgment and communication ability. No juniors learning on client work. No account managers padding estimates. Just senior engineers who understand both code and context.</p>
+        </div>
+        <div class="about-text">
+          <img class="inline-img-sm" style="margin-bottom:4mm;"
+               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=85"
+               alt="" crossorigin="anonymous" />
+          <p>Our model is designed around long engagements. The average client relationship runs three years. We measure success by retention &mdash; how many clients stay with us past the first project &mdash; not by quarterly growth metrics. Currently, that number is 11 out of 12.</p>
+          <p>We operate white-label by default. Your clients never see our name. Repos sit in your GitHub organization. Deployments run on your infrastructure. Client communication goes through you. We exist to make your agency more capable, not to build our own brand.</p>
+        </div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">11 of 12</div>
+        <div class="about-stat-label">clients stay with us past the first project</div>
+      </div>
+    </div>
+    <div class="int-footer">
+      <span><strong>Ragen</strong> Software LLP</span>
+      <span>2 / 10</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     SERVICES
+     ================================================ -->
+<div class="page">
+  <div class="int-page">
+    <div class="int-header">
+      <div class="int-sec-num">02 &mdash; Services</div>
+      <div class="int-sec-title">What we build and the technologies we use to build it</div>
+    </div>
+    <div class="int-body">
+      <img class="inline-img"
+           src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=85"
+           alt="" crossorigin="anonymous" />
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-card-num">01</div>
+          <h4>Web application development</h4>
+          <p>Full-stack platforms, SaaS products, admin dashboards, and customer portals. React, Next.js, TypeScript on the frontend. Node.js or Python on the backend. PostgreSQL for persistence. Architecture scoped to the actual problem, not what's trending.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">02</div>
+          <h4>Mobile applications</h4>
+          <p>iOS, Android, and cross-platform apps with React Native. Full lifecycle from architecture through App Store submission and post-launch maintenance. Most projects are companion apps to larger web platforms.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">03</div>
+          <h4>Backend &amp; API engineering</h4>
+          <p>REST and GraphQL APIs, microservices, event-driven systems, database design. Platforms handling millions of daily requests. Performance and observability treated as first-class concerns.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">04</div>
+          <h4>AI &amp; automation</h4>
+          <p>LLM integration, RAG pipelines, document processing, intelligent agents, workflow automation. We treat AI as an engineering discipline &mdash; the hard part is productionizing it reliably.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">05</div>
+          <h4>SaaS product development</h4>
+          <p>End-to-end builds: multi-tenant architecture, Stripe billing, user management, analytics. The operational tooling that turns a prototype into a software business.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">06</div>
+          <h4>UI/UX design &amp; development</h4>
+          <p>Design-to-code with meticulous attention to motion, states, responsive behavior, and accessibility. Production-ready output from your Figma files. Not "close enough."</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">07</div>
+          <h4>Cloud infrastructure &amp; DevOps</h4>
+          <p>AWS architecture, Docker, Kubernetes, CI/CD with GitHub Actions, Terraform, monitoring with Datadog or Grafana. Designed for reliability and reasonable cost.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">08</div>
+          <h4>Platform integrations</h4>
+          <p>CRM, payment gateways, ERPs, third-party APIs. We handle edge cases, rate limits, webhook reliability, and data consistency &mdash; the parts that make integrations genuinely hard.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">09</div>
+          <h4>Blockchain &amp; Web3</h4>
+          <p>Solidity smart contracts, dApp frontends, wallet integration, NFT platforms, DeFi protocols. Same engineering rigor as any other domain. Security audits are mandatory.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">10</div>
+          <h4>Custom enterprise software</h4>
+          <p>Internal tools, workflow systems, inventory management, logistics platforms, ERP modules. The unglamorous software that runs a company's core operations. High-impact work.</p>
+        </div>
+      </div>
+    </div>
+    <div class="int-footer">
+      <span><strong>Ragen</strong> Software LLP</span>
+      <span>3 / 10</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     WHY US
+     ================================================ -->
+<div class="page">
+  <div class="int-page">
+    <div class="int-header">
+      <div class="int-sec-num">03 &mdash; Difference</div>
+      <div class="int-sec-title">Eight things that make the partnership work</div>
+    </div>
+    <div class="int-body">
+      <div class="why-grid">
+        <div class="why-item">
+          <h4>Senior-only teams</h4>
+          <p>Everyone writing code on your project has shipped production software before. No exception. This means fewer mistakes, better architecture, and less rework. Junior developers learn elsewhere &mdash; not on your timeline.</p>
+        </div>
+        <div class="why-item">
+          <h4>Direct engineer access</h4>
+          <p>You talk to the people building your product. No account managers filtering information. No project managers padding estimates. Direct, technical conversations that move work forward.</p>
+        </div>
+        <div class="why-item">
+          <h4>White-label by default</h4>
+          <p>Client meetings happen through you. Repos are in your GitHub org. Deploys go to your infrastructure. Our name appears nowhere on anything your client sees. We are invisible by design.</p>
+        </div>
+        <div class="why-item">
+          <h4>Long-term thinking</h4>
+          <p>We optimize for maintainability two years out. Documentation, tests, and clear architecture aren't extras &mdash; they're how we avoid the technical debt that makes software expensive to change.</p>
+        </div>
+        <div class="why-item">
+          <h4>Predictable velocity</h4>
+          <p>Two-week cycles with demonstrable output at the end of each. No "95% done" status updates that drag on for weeks. You see working software, not progress reports.</p>
+        </div>
+        <div class="why-item">
+          <h4>Business-aware engineering</h4>
+          <p>We ask why before how. Understanding the business context helps us make better technical trade-offs. Sometimes the right answer is less code, not more.</p>
+        </div>
+        <div class="why-item">
+          <h4>Security as a habit</h4>
+          <p>OWASP awareness, dependency audits, secure auth flows, proper secret management. Security is continuous discipline, not a pre-launch checklist item.</p>
+        </div>
+        <div class="why-item">
+          <h4>Written culture</h4>
+          <p>Architecture decisions, trade-offs, and technical discussions are documented in writing. Institutional knowledge stays with you even if individual engineers rotate. No single points of knowledge failure.</p>
+        </div>
+      </div>
+    </div>
+    <div class="int-footer">
+      <span><strong>Ragen</strong> Software LLP</span>
+      <span>4 / 10</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     PROCESS
+     ================================================ -->
+<div class="page">
+  <div class="int-page">
+    <div class="int-header">
+      <div class="int-sec-num">04 &mdash; Process</div>
+      <div class="int-sec-title">How an engagement works, from first call to ongoing support</div>
+    </div>
+    <div class="int-body">
+      <div class="proc-grid">
+        <div class="proc-item">
+          <div class="proc-num">1</div>
+          <div>
+            <h4>Discovery &amp; scoping</h4>
+            <p>Two or three conversations to understand what you're building, why, and for whom. We ask about business constraints, not just technical requirements. Output is a scoping document with milestones &mdash; not a 60-page spec nobody reads.</p>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">2</div>
+          <div>
+            <h4>Architecture &amp; design alignment</h4>
+            <p>Before writing code, we align on database schema, API surface, component structure, and deployment strategy. We review your design work for implementation feasibility.</p>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">3</div>
+          <div>
+            <h4>Development sprints</h4>
+            <p>Two-week cycles ending with a demo of working, deployable software. You get Slack access to see progress, ask questions, and course-correct in real time. No status meetings required.</p>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">4</div>
+          <div>
+            <h4>Review &amp; refinement</h4>
+            <p>Every PR reviewed by another engineer before merging. We test for functionality, performance, security, and edge cases. QA is part of development, not a separate phase.</p>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">5</div>
+          <div>
+            <h4>Deployment &amp; handover</h4>
+            <p>We deploy to your infrastructure. CI/CD is configured for automated future deployments. Documentation, runbooks, and architecture diagrams included. Your team &mdash; or any future team &mdash; can pick up where we left off.</p>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">6</div>
+          <div>
+            <h4>Ongoing support</h4>
+            <p>Most clients keep us on retainer after launch. Bug fixes, features, performance improvements, dependency upgrades &mdash; the steady work of keeping software healthy over time. Flexible and responsive.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="int-footer">
+      <span><strong>Ragen</strong> Software LLP</span>
+      <span>5 / 10</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     TECH STACK
+     ================================================ -->
+<div class="page">
+  <div class="int-page">
+    <div class="int-header">
+      <div class="int-sec-num">05 &mdash; Technology</div>
+      <div class="int-sec-title">The tools we reach for by default &mdash; and we deviate when a project calls for it</div>
+    </div>
+    <div class="int-body">
+      <img class="inline-img"
+           src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=85"
+           alt="" crossorigin="anonymous" />
+      <div class="tech-grid">
+        <div>
+          <div class="tech-section">
+            <h5>Frontend</h5>
+            <div class="tech-tags">
+              <span class="tech-tag">React</span><span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Vue</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Framer Motion</span><span class="tech-tag">React Native</span><span class="tech-tag">Expo</span>
+            </div>
+          </div>
+          <div class="tech-section">
+            <h5>Backend</h5>
+            <div class="tech-tags">
+              <span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">Fastify</span><span class="tech-tag">Python</span><span class="tech-tag">Django</span><span class="tech-tag">FastAPI</span><span class="tech-tag">Go</span><span class="tech-tag">GraphQL</span><span class="tech-tag">tRPC</span>
+            </div>
+          </div>
+          <div class="tech-section">
+            <h5>Data &amp; Storage</h5>
+            <div class="tech-tags">
+              <span class="tech-tag">PostgreSQL</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Redis</span><span class="tech-tag">Prisma</span><span class="tech-tag">Drizzle</span><span class="tech-tag">Elasticsearch</span><span class="tech-tag">Firebase</span><span class="tech-tag">Supabase</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="tech-section">
+            <h5>Cloud &amp; Infrastructure</h5>
+            <div class="tech-tags">
+              <span class="tech-tag">AWS</span><span class="tech-tag">Google Cloud</span><span class="tech-tag">Azure</span><span class="tech-tag">Docker</span><span class="tech-tag">Kubernetes</span><span class="tech-tag">Terraform</span><span class="tech-tag">Vercel</span><span class="tech-tag">Railway</span><span class="tech-tag">Cloudflare</span>
+            </div>
+          </div>
+          <div class="tech-section">
+            <h5>DevOps &amp; Monitoring</h5>
+            <div class="tech-tags">
+              <span class="tech-tag">GitHub Actions</span><span class="tech-tag">GitLab CI</span><span class="tech-tag">Datadog</span><span class="tech-tag">Grafana</span><span class="tech-tag">Sentry</span><span class="tech-tag">LogRocket</span>
+            </div>
+          </div>
+          <div class="tech-section">
+            <h5>AI &amp; ML</h5>
+            <div class="tech-tags">
+              <span class="tech-tag">OpenAI</span><span class="tech-tag">Claude</span><span class="tech-tag">LangChain</span><span class="tech-tag">LlamaIndex</span><span class="tech-tag">Pinecone</span><span class="tech-tag">HuggingFace</span><span class="tech-tag">TensorFlow</span>
+            </div>
+          </div>
+          <div class="tech-section">
+            <h5>Blockchain</h5>
+            <div class="tech-tags">
+              <span class="tech-tag">Solidity</span><span class="tech-tag">Hardhat</span><span class="tech-tag">ethers.js</span><span class="tech-tag">Web3.js</span><span class="tech-tag">IPFS</span><span class="tech-tag">The Graph</span>
+            </div>
+          </div>
+          <div class="tech-section">
+            <h5>Design &amp; Collaboration</h5>
+            <div class="tech-tags">
+              <span class="tech-tag">Figma</span><span class="tech-tag">Linear</span><span class="tech-tag">Notion</span><span class="tech-tag">Slack</span><span class="tech-tag">GitHub</span><span class="tech-tag">Loom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="int-footer">
+      <span><strong>Ragen</strong> Software LLP</span>
+      <span>6 / 10</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     INDUSTRIES
+     ================================================ -->
+<div class="page">
+  <div class="int-page">
+    <div class="int-header">
+      <div class="int-sec-num">06 &mdash; Industries</div>
+      <div class="int-sec-title">Domains where we've built enough experience to add strategic value</div>
+    </div>
+    <div class="int-body">
+      <img class="inline-img"
+           src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1200&q=85"
+           alt="" crossorigin="anonymous" />
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-card-num">01</div>
+          <h4>Financial services &amp; fintech</h4>
+          <p>Portfolio management, compliance systems, payment integrations, financial data platforms. We understand the regulatory weight fintech projects carry.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">02</div>
+          <h4>Healthcare</h4>
+          <p>Patient management, telehealth, scheduling, HIPAA-compliant data handling, EMR integrations. Healthcare software is hard because the stakes are high.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">03</div>
+          <h4>E-commerce &amp; retail</h4>
+          <p>Custom storefronts, headless Shopify, inventory management, multi-vendor marketplaces, personalization engines. Systems handling millions in monthly GMV.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">04</div>
+          <h4>SaaS</h4>
+          <p>Multi-tenant platforms, subscription management, user analytics, onboarding flows, operational backend. Most clients are SaaS companies or agencies building SaaS.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">05</div>
+          <h4>Logistics &amp; supply chain</h4>
+          <p>Route optimization, warehouse management, real-time tracking, fleet dashboards, EDI integrations. Unsexy problems with enormous ROI when solved well.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">06</div>
+          <h4>Education &amp; edtech</h4>
+          <p>Learning management, assessment platforms, student portals, content delivery. Built for institutions serving thousands of concurrent users at peak.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">07</div>
+          <h4>Real estate &amp; property</h4>
+          <p>Property listing platforms, tenant management, maintenance workflows, document automation, CRM integrations for brokers and property managers.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card-num">08</div>
+          <h4>Professional services</h4>
+          <p>Client portals, project management, time tracking, invoicing, resource planning for law firms, consultancies, and accounting practices.</p>
+        </div>
+      </div>
+    </div>
+    <div class="int-footer">
+      <span><strong>Ragen</strong> Software LLP</span>
+      <span>7 / 10</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     CASE STUDIES
+     ================================================ -->
+<div class="page">
+  <div class="int-page">
+    <div class="int-header">
+      <div class="int-sec-num">07 &mdash; Work</div>
+      <div class="int-sec-title">Selected projects. Names withheld; details are real.</div>
+    </div>
+    <div class="int-body">
+      <div class="case-item">
+        <img class="case-img"
+             src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=85"
+             alt="" crossorigin="anonymous" />
+        <h4>Multi-tenant SaaS platform for a legal-tech company</h4>
+        <div class="case-tags">React &middot; Node.js &middot; PostgreSQL &middot; AWS &middot; Stripe</div>
+        <p>A US-based legal-tech startup needed a document automation platform serving individual law firms, corporate legal departments, and legal aid organizations &mdash; each with distinct feature sets, pricing, and compliance requirements. Their prototype was single-tenant and capped at three pilot customers. We rebuilt the platform with multi-tenant architecture, role-based access control, document generation pipelines, and Stripe subscription management. Eight months from architecture to launch.</p>
+        <div class="case-result">30+ paying customers in six months. Zero downtime in the first year. 4,200 documents processed per business day.</div>
+      </div>
+      <div class="case-item">
+        <img class="case-img"
+             src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=85"
+             alt="" crossorigin="anonymous" />
+        <h4>Mobile banking experience for a European fintech</h4>
+        <div class="case-tags">React Native &middot; Python &middot; Django &middot; Kubernetes &middot; Plaid</div>
+        <p>A Berlin fintech needed an iOS and Android banking app with account aggregation, spending analytics, and savings goals. Backend integrated with Plaid for US connectivity and Open Banking APIs for Europe. Tight regulatory deadline. We built the React Native app and aggregation backend in parallel. First App Store version shipped in 14 weeks.</p>
+        <div class="case-result">12,000 downloads in Q1. 4.6 App Store rating. Client raised Series A four months post-launch, citing mobile as the primary growth driver.</div>
+      </div>
+      <div class="case-item">
+        <img class="case-img"
+             src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=85"
+             alt="" crossorigin="anonymous" />
+        <h4>Supply chain visibility platform for a logistics company</h4>
+        <div class="case-tags">Next.js &middot; Go &middot; PostgreSQL &middot; Docker &middot; Elasticsearch</div>
+        <p>A logistics firm needed to replace a legacy desktop app with a modern web platform for real-time shipment tracking, route optimization, and exception management. The system ingests data from 14 carrier APIs, normalizes it, and presents a unified view. We built the ingestion pipeline in Go and the dashboard in Next.js.</p>
+        <div class="case-result">6x improvement in exception response time. 3,500+ shipments tracked daily. 70 hours per week saved in manual data entry across operations.</div>
+      </div>
+    </div>
+    <div class="int-footer">
+      <span><strong>Ragen</strong> Software LLP</span>
+      <span>8 / 10</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     TESTIMONIALS + ENGAGEMENT
+     ================================================ -->
+<div class="page">
+  <div class="int-page">
+    <div class="int-header">
+      <div class="int-sec-num">08 &mdash; Testimonials</div>
+      <div class="int-sec-title">What clients say after working with us</div>
+    </div>
+    <div class="int-body">
+      <div class="test-grid">
+        <div class="test-card">
+          <q>We brought Ragen in after two failed attempts with other dev shops. The difference was immediate &mdash; they asked questions nobody else had asked, pushed back when our timelines were unrealistic, and delivered working software every two weeks without exception. Two years later, they're still our primary development partner.</q>
+          <div class="attr"><strong>Design agency founder</strong><br>New York, 3-year engagement</div>
+        </div>
+        <div class="test-card">
+          <q>They act like they work here. They're in our Slack, they join our planning sessions, they understand our business context. But my clients have no idea they exist &mdash; which is exactly how I need it. Code quality is consistently high. When there's a production issue, they respond faster than some of my in-house people.</q>
+          <div class="attr"><strong>CTO, SaaS startup</strong><br>London, 2-year engagement</div>
+        </div>
+        <div class="test-card">
+          <q>I was skeptical about outsourcing. Every founder has a horror story. Ragen is the first external team I've worked with where I didn't feel like I was constantly managing them. They estimate conservatively and deliver on time. When something takes longer, they tell me early, not after the deadline. That honesty is rare.</q>
+          <div class="attr"><strong>CEO, fintech company</strong><br>Berlin, 18-month engagement</div>
+        </div>
+        <div class="test-card">
+          <q>We're a design studio without in-house engineering. Ragen handles all development across web and mobile. Our designers hand off Figma files and Ragen returns production code that actually matches the designs. It sounds simple. It's not. Most dev teams can't do it. Ragen can.</q>
+          <div class="attr"><strong>Creative director, brand studio</strong><br>San Francisco, 2.5-year engagement</div>
+        </div>
+      </div>
+    </div>
+    <div class="int-footer">
+      <span><strong>Ragen</strong> Software LLP</span>
+      <span>9 / 10</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     ENGAGEMENT + CONTACT
+     ================================================ -->
+<div class="page">
+  <div class="int-page">
+    <div class="int-header">
+      <div class="int-sec-num">09 &mdash; Engagement</div>
+      <div class="int-sec-title">Three ways to work with us</div>
+    </div>
+    <div class="int-body">
+      <div class="eng-grid">
+        <div class="eng-card">
+          <div class="eng-label">Model 01</div>
+          <h4>Fixed scope</h4>
+          <p>For well-defined projects with clear requirements and a deadline. We scope together, agree on deliverables and timeline, and deliver against that scope. Milestone-based payment. Changes handled through a straight-forward change order process.</p>
+        </div>
+        <div class="eng-card">
+          <div class="eng-label">Model 02</div>
+          <h4>Dedicated team</h4>
+          <p>For ongoing product work where scope evolves. A stable engineering team operating as your development arm. Monthly flat rate. You prioritize the backlog; we deliver in two-week cycles. Minimum three-month commitment.</p>
+        </div>
+        <div class="eng-card">
+          <div class="eng-label">Model 03</div>
+          <h4>Monthly retainer</h4>
+          <p>For post-launch support and incremental improvements. Fixed monthly capacity for bug fixes, minor features, performance work, and dependency management. No minimum commitment. Combines with either model above.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:10mm; padding-top:8mm; border-top:1px solid #2a2724;">
+        <div class="sect-headline" style="font-size:20pt; max-width:100%;">Let's talk about<br>what you're building.</div>
+        <p style="font-size:9pt; line-height:1.6; color:#8a8680; max-width:70%; margin-bottom:8mm;">
+          We take on a limited number of engagements each quarter. If you need senior engineering capacity, the first conversation is just that &mdash; no pitch, no pressure.
+        </p>
+        <div style="font-size:9pt; color:#c4bfb8; line-height:1.8; margin-bottom:6mm;">
+          hello@ragen.dev &nbsp;&middot;&nbsp; ragen.dev
+        </div>
+        <div style="font-size:7pt; color:#5c5854; max-width:60%; line-height:1.5;">
+          We respond within one business day. A brief description of your project and timeline helps us prepare for the conversation.
+        </div>
+      </div>
+    </div>
+    <div class="int-footer">
+      <span><strong>Ragen</strong> Software LLP</span>
+      <span>10 / 10</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
