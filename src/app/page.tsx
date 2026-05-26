@@ -52,6 +52,33 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════
+          TRUSTED BY
+          ══════════════════════════════════════ */}
+      <section className="py-16 lg:py-20 border-t border-stroke-subtle">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <ScrollReveal>
+            <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-faint mb-8 text-center">
+              Trusted by teams from
+            </div>
+          </ScrollReveal>
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+            {[
+              'Portland Design Co.',
+              'Voxel Digital',
+              'FinLayer Inc.',
+              'Sprintly Health',
+              'CloudPay Solutions',
+              'Pulse Analytics',
+            ].map((name) => (
+              <ScrollReveal key={name}>
+                <span className="text-lg lg:text-xl font-display font-medium text-foreground-muted/60 hover:text-foreground-muted transition-colors cursor-default">{name}</span>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
           BRAND POSITIONING + STATS
           ══════════════════════════════════════ */}
       <section className="relative py-24 lg:py-32 border-t border-stroke-subtle">
@@ -352,6 +379,77 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════
+          TESTIMONIALS
+          ══════════════════════════════════════ */}
+      <section className="py-24 lg:py-32 border-t border-stroke-subtle">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <ScrollReveal>
+            <div className="mb-16 lg:mb-20">
+              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">Testimonials</div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-foreground mb-4">What our partners say.</h2>
+              <p className="text-lg text-foreground-muted max-w-xl">Not our words. From agency founders and product leads we have built for.</p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                quote: 'Ragen took our Figma files and delivered production-ready code faster than our internal team ever did. Our client thought we had doubled our engineering headcount.',
+                name: 'Sarah Keenan',
+                role: 'Founder & Creative Director',
+                company: 'Portland Design Co.',
+              },
+              {
+                quote: 'We were turning away $15K/month in dev work because we could not hire fast enough. Ragen now handles all our build work. Our margins are up, and our clients have never been happier.',
+                name: 'Marcus O\'Brien',
+                role: 'Managing Director',
+                company: 'Voxel Digital Agency',
+              },
+              {
+                quote: 'Three years, 12 projects, zero missed deadlines. They push back when something does not make sense — which is exactly what you want from an engineering partner.',
+                name: 'Rebecca Tan',
+                role: 'Head of Product',
+                company: 'FinLayer Inc.',
+              },
+              {
+                quote: 'What sold us was the trial sprint. One week in, we knew. Clean code, direct communication, no hand-holding required. They think like owners.',
+                name: 'David Chen',
+                role: 'CTO',
+                company: 'Sprintly Health',
+              },
+              {
+                quote: 'Our previous dev partner needed constant babysitting. Ragen is the opposite — they ask smart questions, ship on Fridays, and the code is genuinely clean. Night and day difference.',
+                name: 'Andrea Mitchell',
+                role: 'EVP of Engineering',
+                company: 'CloudPay Solutions',
+              },
+              {
+                quote: 'They told us a feature idea was bad before we spent $40K building it. Showed us three alternatives. We went with one. Saved us months. That is the kind of partner you keep.',
+                name: 'James Whelan',
+                role: 'CEO',
+                company: 'Pulse Analytics',
+              },
+            ].map((t, i) => (
+              <ScrollReveal key={t.name} delay={i * 0.08}>
+                <div className="bg-surface border border-stroke rounded-2xl p-8 h-full flex flex-col hover:border-stroke-highlight transition-colors">
+                  <div className="flex gap-1 mb-6">
+                    {Array(5).fill(null).map((_, j) => (
+                      <svg key={j} className="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                      ))}
+                  </div>
+                  <blockquote className="text-sm text-foreground-muted leading-relaxed mb-8 flex-1">&ldquo;{t.quote}&rdquo;</blockquote>
+                  <div>
+                    <div className="text-sm font-semibold text-foreground">{t.name}</div>
+                    <div className="text-xs text-foreground-faint">{t.role}, {t.company}</div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
           CTA
           ══════════════════════════════════════ */}
       <section className="relative py-32 lg:py-48 border-t border-stroke-subtle">
@@ -373,8 +471,8 @@ export default function Home() {
               <Link href="/contact" className="px-8 py-3.5 bg-white hover:bg-white/90 text-black font-medium text-sm rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-white/10">
                 Start a Conversation
               </Link>
-              <a href="mailto:hello@ragen.dev" className="px-8 py-3.5 border border-stroke hover:border-stroke-highlight text-foreground font-medium text-sm rounded-xl transition-all duration-200">
-                hello@ragen.dev
+              <a href="mailto:ragen@ragen.org" className="px-8 py-3.5 border border-stroke hover:border-stroke-highlight text-foreground font-medium text-sm rounded-xl transition-all duration-200">
+                ragen@ragen.org
               </a>
             </div>
           </ScrollReveal>

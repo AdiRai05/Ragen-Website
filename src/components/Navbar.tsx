@@ -19,6 +19,7 @@ const navLinks = [
     ],
   },
   { label: 'About', href: '/about' },
+  { label: 'Partnerships', href: '/partnerships' },
   { label: 'AI', href: '/ai' },
   { label: 'Contact', href: '/contact' },
 ];
