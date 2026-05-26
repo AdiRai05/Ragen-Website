@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ragen Instagram Post 3 — Your Website Is Your Salesperson</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #111;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 20px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1080px;
+    background: #0d0d0d;
+    color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 120px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .slide-label {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #888;
+    letter-spacing: 0.5px;
+  }
+
+  .logo-dot {
+    width: 10px;
+    height: 10px;
+    background: #f06543;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  .accent-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #f06543;
+  }
+
+  .brand-footer {
+    position: absolute;
+    bottom: 40px;
+    font-size: 18px;
+    color: #666;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  /* Slide 1 — Hook */
+  .slide-1 .big-text {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    max-width: 880px;
+  }
+  .slide-1 .big-text .orange {
+    color: #f06543;
+  }
+  .slide-1 .sub {
+    font-size: 28px;
+    color: #999;
+    margin-top: 36px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  /* Slide 2 — The Gap */
+  .slide-2 .heading {
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 50px;
+  }
+  .slide-2 .heading .orange {
+    color: #f06543;
+  }
+  .slide-2 .compare-box {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 800px;
+  }
+  .slide-2 .col {
+    flex: 1;
+    background: #1a1a1a;
+    border-radius: 14px;
+    padding: 36px 28px;
+    text-align: left;
+  }
+  .slide-2 .col .col-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f06543;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .slide-2 .col .item {
+    font-size: 18px;
+    color: #aaa;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .slide-2 .col .item.good { color: #22c55e; }
+
+  /* Slide 3 — The 3-Second Rule */
+  .slide-3 .timer {
+    font-size: 140px;
+    font-weight: 800;
+    color: #f06543;
+    letter-spacing: -3px;
+    line-height: 1;
+  }
+  .slide-3 .timer-label {
+    font-size: 34px;
+    font-weight: 600;
+    color: #ccc;
+    margin-top: 12px;
+  }
+  .slide-3 .points {
+    font-size: 22px;
+    color: #888;
+    margin-top: 44px;
+    line-height: 2;
+    max-width: 680px;
+    text-align: left;
+  }
+  .slide-3 .points span {
+    color: #f06543;
+    font-weight: 600;
+  }
+
+  /* Slide 4 — Who We Are */
+  .slide-4 .big-line {
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .slide-4 .big-line .orange {
+    color: #f06543;
+  }
+  .slide-4 .services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 44px;
+    max-width: 700px;
+  }
+  .slide-4 .services .tag {
+    background: #1a1a1a;
+    color: #ccc;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 22px;
+    border-radius: 30px;
+    border: 1px solid #2a2a2a;
+  }
+  .slide-4 .small-line {
+    font-size: 22px;
+    color: #999;
+    margin-top: 36px;
+    line-height: 1.6;
+    max-width: 620px;
+  }
+
+  /* Slide 5 — CTA */
+  .slide-5 .cta-heading {
+    font-size: 58px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+  }
+  .slide-5 .cta-sub {
+    font-size: 26px;
+    color: #999;
+    margin-top: 30px;
+    line-height: 1.5;
+  }
+  .slide-5 .cta-url {
+    font-size: 32px;
+    font-weight: 700;
+    color: #f06543;
+    margin-top: 50px;
+    letter-spacing: -0.5px;
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 — Hook -->
+<div class="slide slide-1">
+  <div class="accent-line"></div>
+  <div class="slide-label"><span class="logo-dot"></span> Ragen</div>
+  <div class="big-text">
+    Your website should be your <span class="orange">best salesperson.</span>
+  </div>
+  <div class="sub">
+    Most small business sites are the employee<br>who doesn't show up.
+  </div>
+  <div class="brand-footer">ragen.org</div>
+</div>
+
+<!-- SLIDE 2 — What People See vs What You Think -->
+<div class="slide slide-2">
+  <div class="accent-line"></div>
+  <div class="slide-label"><span class="logo-dot"></span> Ragen</div>
+  <div class="heading">What you <span class="orange">think</span> vs what they <span class="orange">see</span>.</div>
+  <div class="compare-box">
+    <div class="col">
+      <div class="col-title">You think</div>
+      <div class="item">"Our work speaks for itself"</div>
+      <div class="item">"We get most business through word of mouth"</div>
+      <div class="item">"The site is fine, it's been up for years"</div>
+      <div class="item">"People will call if they're interested"</div>
+    </div>
+    <div class="col">
+      <div class="col-title">They see</div>
+      <div class="item">A site from 2016 on their phone</div>
+      <div class="item">No prices, no examples, no reason to trust you</div>
+      <div class="item">"If the site looks like this, what else is neglected?"</div>
+      <div class="item">They leave. They don't call.</div>
+    </div>
+  </div>
+  <div class="brand-footer">ragen.org</div>
+</div>
+
+<!-- SLIDE 3 — The 3-Second Rule -->
+<div class="slide slide-3">
+  <div class="accent-line"></div>
+  <div class="slide-label"><span class="logo-dot"></span> Ragen</div>
+  <div class="timer">3 seconds</div>
+  <div class="timer-label">That's all you get.</div>
+  <div class="points">
+    <span>&rarr;</span> Someone lands on your site<br>
+    <span>&rarr;</span> They decide if you're legit<br>
+    <span>&rarr;</span> If the answer isn't an instant "yes"<br>
+    <span>&rarr;</span> They're gone. To your competitor.<br>
+    <span>&rarr;</span> You never even knew they were there.
+  </div>
+  <div class="brand-footer">ragen.org</div>
+</div>
+
+<!-- SLIDE 4 — Who We Are -->
+<div class="slide slide-4">
+  <div class="accent-line"></div>
+  <div class="slide-label"><span class="logo-dot"></span> Ragen</div>
+  <div class="big-line">We're <span class="orange">Ragen.</span></div>
+  <div class="small-line">
+    We build clean, fast websites for real businesses — the kind that actually bring in customers.
+  </div>
+  <div class="services">
+    <div class="tag">Trades &amp; Construction</div>
+    <div class="tag">Health &amp; Dental</div>
+    <div class="tag">Salons &amp; Barbers</div>
+    <div class="tag">Cafes &amp; Restaurants</div>
+    <div class="tag">Fitness &amp; Gyms</div>
+    <div class="tag">Professional Services</div>
+  </div>
+  <div class="small-line" style="color:#777;">
+    No templates. No bloated agency.<br>Just a site that works as hard as you do.
+  </div>
+  <div class="brand-footer">ragen.org</div>
+</div>
+
+<!-- SLIDE 5 — CTA -->
+<div class="slide slide-5">
+  <div class="accent-line"></div>
+  <div class="slide-label"><span class="logo-dot"></span> Ragen</div>
+  <div class="cta-heading">
+    Does your website<br>pass the 3-second test?
+  </div>
+  <div class="cta-sub">
+    DM "review" and I'll tell you honestly.<br>
+    Takes 5 minutes. No pitch.
+  </div>
+  <div class="cta-url">ragen.org</div>
+  <div class="brand-footer" style="bottom:40px;">Your site should earn its keep. Let's make sure it does.</div>
+</div>
+
+</body>
+</html>
