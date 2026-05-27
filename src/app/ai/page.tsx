@@ -1,7 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { images } from '@/data/images';
+
+export const metadata: Metadata = {
+  title: 'AI Solutions',
+  description:
+    'LLM-powered features, RAG pipelines, intelligent agents, and workflow automation that ships to production — not just demos. AI engineering that delivers real business value.',
+  alternates: {
+    canonical: '/ai',
+  },
+  openGraph: {
+    title: 'AI Solutions - Ragen',
+    description:
+      'LLM-powered features, RAG pipelines, intelligent agents, and workflow automation that ships to production.',
+    url: 'https://ragen.org/ai',
+  },
+};
 
 const capabilities = [
   { number: '01', title: 'LLM-Powered Features', desc: 'Embedding intelligent chat, search, summarization, and content generation directly into your product. We handle context windows, prompt engineering, streaming, and the edge cases that make or break the user experience.', tags: ['OpenAI', 'Streaming', 'Prompt Engineering', 'Context Management'] },

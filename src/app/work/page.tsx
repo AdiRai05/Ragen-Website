@@ -1,7 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { images } from '@/data/images';
+
+export const metadata: Metadata = {
+  title: 'Work',
+  description:
+    'Selected projects from the Ragen portfolio. SaaS platforms, AI-powered tools, mobile apps, and platform migrations — built for startups, agencies, and enterprises.',
+  alternates: {
+    canonical: '/work',
+  },
+  openGraph: {
+    title: 'Our Work - Ragen',
+    description:
+      'Selected projects: SaaS platforms, AI-powered tools, mobile apps, and platform migrations built for startups, agencies, and enterprises.',
+    url: 'https://ragen.org/work',
+  },
+};
 
 const projects = [
   { title: 'Multi-tenant SaaS Platform', category: 'SaaS Development', desc: 'Designed and built a multi-tenant SaaS platform from scratch. Subscription management, tenant isolation, usage-based billing, and a customer-facing dashboard.', tech: ['Next.js', 'PostgreSQL', 'Stripe', 'Redis', 'Docker'], img: '/hero-image.png' },

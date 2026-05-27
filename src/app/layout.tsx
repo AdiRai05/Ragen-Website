@@ -28,19 +28,56 @@ export const metadata: Metadata = {
   },
   description:
     'A development studio that operates at the intersection of engineering precision and design craft. We build software for startups, scale-ups, and enterprises.',
-  metadataBase: new URL('https://ragen-website.vercel.app'),
+  metadataBase: new URL('https://ragen.org'),
+  alternates: {
+    canonical: '/',
+  },
+  keywords: [
+    'software development',
+    'web development',
+    'mobile app development',
+    'SaaS development',
+    'UI/UX design',
+    'AI integration',
+    'cloud DevOps',
+    'custom software',
+    'white label development',
+    'outsourcing',
+  ],
   openGraph: {
     title: 'Ragen - Software Studio',
     description:
       'A development studio at the intersection of engineering precision and design craft.',
-    url: 'https://ragen-website.vercel.app',
+    url: 'https://ragen.org',
     siteName: 'Ragen',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/hero-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Ragen - Software Studio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ragen - Software Studio',
+    description:
+      'A development studio at the intersection of engineering precision and design craft.',
+    images: ['/hero-image.png'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -52,6 +89,46 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body className="min-h-screen antialiased" style={{background:'#0D0D0D', color:'#FFFFFF'}}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                '@context': 'https://schema.org',
+                '@type': 'Organization',
+                name: 'Ragen',
+                url: 'https://ragen.org',
+                email: 'ragen@ragen.org',
+                description:
+                  'A development studio that operates at the intersection of engineering precision and design craft. We build software for startups, scale-ups, and enterprises.',
+                foundingDate: '2020',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressCountry: 'IN',
+                },
+                contactPoint: {
+                  '@type': 'ContactPoint',
+                  email: 'ragen@ragen.org',
+                  contactType: 'sales',
+                },
+                sameAs: [
+                  'https://instagram.com/ragen.org',
+                  'https://facebook.com/ragen.org',
+                  'https://linkedin.com/company/ragen',
+                  'https://twitter.com/ragen_org',
+                ],
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'WebSite',
+                name: 'Ragen',
+                url: 'https://ragen.org',
+                description:
+                  'A development studio at the intersection of engineering precision and design craft.',
+              },
+            ]),
+          }}
+        />
         <Navbar />
         <main>{children}</main>
         <Footer />

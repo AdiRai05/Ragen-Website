@@ -1,10 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { services } from '@/data/services';
 import { processSteps } from '@/data/process';
 import { techStack } from '@/data/tech-stack';
 import { images } from '@/data/images';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Ragen - Software Studio',
+    description:
+      'A development studio that operates at the intersection of engineering precision and design craft. We build software for startups, scale-ups, and enterprises.',
+    url: 'https://ragen.org',
+  },
+};
 
 const stats = [
   { value: 40, suffix: '+', label: 'Projects shipped' },

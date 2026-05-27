@@ -1,5 +1,21 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ScrollReveal } from '@/components/ScrollReveal';
+
+export const metadata: Metadata = {
+  title: 'Custom Web Development',
+  description:
+    'Full-stack web applications built with modern frameworks. React, Next.js, Node, Python, Go — real software that runs businesses. Not brochure sites.',
+  alternates: {
+    canonical: '/services/web-development',
+  },
+  openGraph: {
+    title: 'Custom Web Development - Ragen',
+    description:
+      'Full-stack web applications built with modern frameworks. Dashboards, marketplaces, internal tools, and customer portals.',
+    url: 'https://ragen.org/services/web-development',
+  },
+};
 
 export default function WebDevPage() {
   return (

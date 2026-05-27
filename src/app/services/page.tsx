@@ -1,8 +1,24 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { services } from '@/data/services';
 import { images } from '@/data/images';
+
+export const metadata: Metadata = {
+  title: 'Services',
+  description:
+    'Custom web development, SaaS development, mobile apps, UI/UX design, AI integrations, and cloud DevOps. Senior engineers only — no juniors touching production code.',
+  alternates: {
+    canonical: '/services',
+  },
+  openGraph: {
+    title: 'Services - Ragen',
+    description:
+      'Custom web development, SaaS development, mobile apps, UI/UX design, AI integrations, and cloud DevOps — all with senior engineers.',
+    url: 'https://ragen.org/services',
+  },
+};
 
 const serviceImages: Record<string, string> = {
   'web-development': images.codeAbstract,

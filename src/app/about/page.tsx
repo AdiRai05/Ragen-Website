@@ -1,7 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { images } from '@/data/images';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    'Ragen is a software studio built on one principle: engineers only. Every person who writes code has at least six years of experience. No juniors touching production code.',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About Ragen - Software Studio',
+    description:
+      'A software studio built on one principle: engineers only. Senior developers, direct communication, and code that lasts.',
+    url: 'https://ragen.org/about',
+  },
+};
 
 const principles = [
   { number: '01', title: 'Engineers only. No juniors touching production code.', desc: 'Every person who writes code for you has at least six years of experience building and shipping software. We do not staff projects with people learning on your dime.' },

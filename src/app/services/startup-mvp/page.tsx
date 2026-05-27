@@ -1,5 +1,21 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ScrollReveal } from '@/components/ScrollReveal';
+
+export const metadata: Metadata = {
+  title: 'Startup MVP Development',
+  description:
+    'From napkin sketch to working product in weeks, not months. We help founders validate ideas, ship MVPs, and reach the milestones that matter to investors.',
+  alternates: {
+    canonical: '/services/startup-mvp',
+  },
+  openGraph: {
+    title: 'Startup MVP Development - Ragen',
+    description:
+      'From napkin sketch to working product in weeks, not months. Validate fast, ship in weeks, investor-ready output.',
+    url: 'https://ragen.org/services/startup-mvp',
+  },
+};
 
 export default function StartupMVPPage() {
   return (

@@ -1,7 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { images } from '@/data/images';
+
+export const metadata: Metadata = {
+  title: 'Partnerships',
+  description:
+    'White-label development partnerships for agencies. Managed dev pods, staff augmentation, and project-based build work. We work behind your brand — your clients never know we exist.',
+  alternates: {
+    canonical: '/partnerships',
+  },
+  openGraph: {
+    title: 'Agency Partnerships - Ragen',
+    description:
+      'White-label development partnerships for agencies. Managed dev pods, staff augmentation, and project-based build work behind your brand.',
+    url: 'https://ragen.org/partnerships',
+  },
+};
 
 const partnerModels = [
   {

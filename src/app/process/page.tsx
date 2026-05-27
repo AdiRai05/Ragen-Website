@@ -1,7 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { images } from '@/data/images';
+
+export const metadata: Metadata = {
+  title: 'Process',
+  description:
+    'How Ragen takes projects from conversation to production. Discovery, strategy, design, development, and launch — with direct access to senior engineers at every step.',
+  alternates: {
+    canonical: '/process',
+  },
+  openGraph: {
+    title: 'Our Process - Ragen',
+    description:
+      'From conversation to production: Discovery, strategy, design, development, and launch. Direct access to senior engineers at every step.',
+    url: 'https://ragen.org/process',
+  },
+};
 
 const fullProcess = [
   { number: '01', title: 'Discovery', duration: 'Typically 1 week', deliverables: 'Problem definition, technical assessment, initial recommendations', desc: 'We start by understanding what you are actually trying to accomplish — not just the feature list. We ask questions about your users, your business goals, your technical constraints, and what success looks like.' },
