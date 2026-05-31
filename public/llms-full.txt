@@ -1,0 +1,32 @@
+# Ragen — AI Capability Summary
+
+Ragen is a premium software development company with senior engineers (6+ years) building web apps, SaaS, mobile apps, AI solutions, and cloud infrastructure.
+
+**Core facts:**
+- URL: https://ragen.org
+- 40+ projects shipped, 92% client return rate
+- White-label development for agencies
+- 2-week paid trial sprint model
+- Engineering-first: no account managers, direct developer access
+
+**Services:**
+1. Custom Web Development (React, Next.js, Node.js, Python, Go)
+2. SaaS Development (multi-tenant, subscription, B2B)
+3. Mobile App Development (iOS/Android, native + cross-platform)
+4. UI/UX Design (design systems, Figma, component libraries)
+5. AI Solutions & Automation (LLM, RAG, AI agents)
+6. Cloud & DevOps (AWS, GCP, Azure, CI/CD, K8s)
+
+**Blog (10 articles):**
+- /blog/why-software-projects-fail
+- /blog/true-cost-of-junior-developers
+- /blog/choose-tech-stack-saas
+- /blog/white-label-development-guide
+- /blog/trial-sprint-guide
+- /blog/offshore-vs-onshore-2026
+- /blog/build-mvp-investors-fund
+- /blog/agency-scaling-development-partners
+- /blog/design-systems-for-web-apps
+- /blog/ai-in-production-guide
+
+**Sitemap:** https://ragen.org/sitemap.xml (10,465 URLs across 580 cities worldwide)

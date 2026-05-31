@@ -1,0 +1,65 @@
+# Ragen — Software Development Company
+
+## About
+Ragen is a premium software development company based in India, founded in 2020. We build custom web applications, SaaS platforms, mobile apps (iOS & Android), AI-powered solutions, and cloud infrastructure. Every engineer has 6+ years of experience. We serve startups, agencies, and enterprises worldwide.
+
+## Key Facts
+- **Name:** Ragen (also known as Ragen Software, Ragen Dev)
+- **Website:** https://ragen.org
+- **Email:** ragen@ragen.org
+- **Phone:** +91 70780 82045
+- **Location:** India (serving worldwide)
+- **Founded:** 2020
+- **Projects Shipped:** 40+
+- **Client Return Rate:** 92%
+- **Engineer Experience:** 6+ years average
+
+## Services
+- **Custom Web Development:** React, Next.js, Node.js, Python, Go — full-stack applications
+- **SaaS Development:** Multi-tenant platforms, subscription engines, B2B products
+- **Mobile App Development:** iOS & Android — Swift, Kotlin, React Native, Flutter
+- **UI/UX Design:** Interface design, design systems, component libraries
+- **AI Solutions & Automation:** LLM-powered features, RAG pipelines, AI agents
+- **Cloud & DevOps:** AWS, GCP, Azure — CI/CD, Kubernetes, observability
+
+## Engagement Models
+- **Managed Dev Pod:** 2 developers + 1 QA, dedicated to your projects
+- **Staff Augmentation:** Senior engineers embedded in your team
+- **Project-Based Build:** Fixed scope, fixed price, clean handoff
+- **Trial Sprint:** 2-week paid trial to evaluate fit
+
+## Key Differentiators
+- Senior engineers only (no juniors on production code)
+- Direct engineer communication (no account managers)
+- White-label development for agencies
+- 2-week trial sprint before any long-term commitment
+- Clean code with documentation, testing, and CI/CD
+
+## Blog Topics
+- Software project failure prevention
+- True cost of junior vs senior developers
+- SaaS tech stack selection
+- White-label development for agencies
+- Trial sprint process guide
+- Offshore vs onshore development
+- MVP development for investors
+- Agency scaling with development partners
+- Design systems for web apps
+- AI in production
+
+## Social Media
+- Instagram: https://instagram.com/ragen.dev
+- Facebook: https://facebook.com/ragen.org
+- LinkedIn: https://linkedin.com/company/ragen-dev
+- Twitter/X: https://twitter.com/ragen_dev
+
+## Pages
+- Home: https://ragen.org
+- About: https://ragen.org/about
+- Work/Portfolio: https://ragen.org/work
+- Services: https://ragen.org/services
+- Process: https://ragen.org/process
+- Partnerships: https://ragen.org/partnerships
+- AI: https://ragen.org/ai
+- Blog: https://ragen.org/blog
+- Contact: https://ragen.org/contact

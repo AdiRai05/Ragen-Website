@@ -82,8 +82,7 @@ export default function ServicesPage() {
                 {/* Content */}
                 <ScrollReveal>
                   <div>
-                    <div className="text-xs font-mono text-foreground-faint mb-4">{service.number}</div>
-                    <h2 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-4">{service.title}</h2>
+<h2 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-4">{service.title}</h2>
                     <p className="text-foreground-muted leading-relaxed mb-6">{service.description}</p>
                     <ul className="space-y-3 mb-6">
                       {service.features.map((feature) => (

@@ -56,8 +56,7 @@ export default function StartupMVPPage() {
             ].map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="p-8 bg-surface-secondary border border-stroke rounded-2xl hover:border-accent-blue/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-black/10 hover:bg-surface-elevated">
-                  <div className="text-xs font-mono text-foreground-faint mb-4">{`0${i + 1}`}</div>
-                  <h3 className="font-display font-semibold text-foreground text-lg mb-3">{item.title}</h3>
+<h3 className="font-display font-semibold text-foreground text-lg mb-3">{item.title}</h3>
                   <p className="text-sm text-foreground-muted leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>

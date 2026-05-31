@@ -163,8 +163,7 @@ export default function Home() {
           {/* Capability 1 — image right */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center mb-20 lg:mb-28">
             <ScrollReveal>
-              <span className="text-xs font-mono text-foreground-faint mb-4 block">01</span>
-              <h3 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-4">Full-Stack Development</h3>
+<h3 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-4">Full-Stack Development</h3>
               <p className="text-foreground-muted leading-relaxed mb-6">
                 React, Next.js, Vue on the frontend. Node, Python, Go, or .NET on the backend. We pick the stack that fits the problem — not the one trending on Twitter.
               </p>
@@ -184,8 +183,7 @@ export default function Home() {
           {/* Capability 2 — image left */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center mb-20 lg:mb-28">
             <ScrollReveal className="lg:order-2">
-              <span className="text-xs font-mono text-foreground-faint mb-4 block">02</span>
-              <h3 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-4">Design &amp; User Experience</h3>
+<h3 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-4">Design &amp; User Experience</h3>
               <p className="text-foreground-muted leading-relaxed mb-6">
                 Interface design that is beautiful and functional. Design systems, component libraries, and interaction patterns that scale across products.
               </p>
@@ -205,8 +203,7 @@ export default function Home() {
           {/* Capability 3 — image right */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <ScrollReveal>
-              <span className="text-xs font-mono text-foreground-faint mb-4 block">03</span>
-              <h3 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-4">Cloud &amp; Infrastructure</h3>
+<h3 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-4">Cloud &amp; Infrastructure</h3>
               <p className="text-foreground-muted leading-relaxed mb-6">
                 AWS, GCP, or Azure — architected for what you actually need. CI/CD, container orchestration, and observability that makes sense.
               </p>
@@ -262,8 +259,7 @@ export default function Home() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className="p-8 lg:p-10">
-                      <div className="text-xs font-mono text-foreground-faint mb-3">{service.number}</div>
-                      <h3 className="text-lg font-display font-semibold text-foreground mb-2 group-hover:text-accent-blue transition-colors">{service.title}</h3>
+<h3 className="text-lg font-display font-semibold text-foreground mb-2 group-hover:text-accent-blue transition-colors">{service.title}</h3>
                       <p className="text-sm text-foreground-muted leading-relaxed line-clamp-2 mb-4">{service.description}</p>
                       <div className="flex items-center gap-2 text-xs text-foreground-faint group-hover:text-foreground-muted transition-colors">
                         <span>Learn more</span>
@@ -301,8 +297,7 @@ export default function Home() {
                 <div className="relative pt-8">
                   {i < processSteps.length - 1 && <div className="absolute top-[19px] left-8 right-0 h-px bg-stroke" />}
                   <div className="absolute top-[16px] left-0 w-[7px] h-[7px] rounded-full bg-accent-blue" />
-                  <div className="text-xs font-mono text-foreground-faint mb-4">{step.number}</div>
-                  <h4 className="font-display font-semibold text-foreground text-sm mb-2 leading-snug">{step.title}</h4>
+<h4 className="font-display font-semibold text-foreground text-sm mb-2 leading-snug">{step.title}</h4>
                   <p className="text-xs text-foreground-muted leading-relaxed">{step.description.length> 120 ? step.description.slice(0, 120) + '…' : step.description}</p>
                 </div>
               </ScrollReveal>
@@ -318,8 +313,7 @@ export default function Home() {
                     {i < processSteps.length - 1 && <div className="w-px flex-1 bg-stroke mt-2" />}
                   </div>
                   <div className="pb-8">
-                    <div className="text-xs font-mono text-foreground-faint mb-2">{step.number}</div>
-                    <h4 className="font-display font-semibold text-foreground mb-2">{step.title}</h4>
+<h4 className="font-display font-semibold text-foreground mb-2">{step.title}</h4>
                     <p className="text-sm text-foreground-muted leading-relaxed">{step.description}</p>
                   </div>
                 </div>

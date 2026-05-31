@@ -240,9 +240,9 @@ export default function RootLayout({
                   availableLanguage: ['English', 'Hindi'],
                 },
                 sameAs: [
-                  'https://instagram.com/ragen.dev',
+                  'https://instagram.com/ragentechnology',
                   'https://facebook.com/ragen.org',
-                  'https://linkedin.com/company/ragen-dev',
+                  'https://linkedin.com/company/ragentechnologies',
                   'https://twitter.com/ragen_dev',
                 ],
                 aggregateRating: {
@@ -280,9 +280,9 @@ export default function RootLayout({
                   availableLanguage: ['English', 'Hindi'],
                 },
                 sameAs: [
-                  'https://instagram.com/ragen.dev',
+                  'https://instagram.com/ragentechnology',
                   'https://facebook.com/ragen.org',
-                  'https://linkedin.com/company/ragen-dev',
+                  'https://linkedin.com/company/ragentechnologies',
                   'https://twitter.com/ragen_dev',
                 ],
               },

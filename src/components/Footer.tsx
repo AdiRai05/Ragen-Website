@@ -4,7 +4,7 @@ import Image from 'next/image';
 const socialLinks = [
   {
     label: 'Instagram',
-    href: 'https://instagram.com/ragen.dev',
+    href: 'https://instagram.com/ragentechnology',
     icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" {...props}>
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -24,7 +24,7 @@ const socialLinks = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com/company/ragen-dev',
+    href: 'https://linkedin.com/company/ragentechnologies',
     icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <circle cx="4" cy="4" r="2" />

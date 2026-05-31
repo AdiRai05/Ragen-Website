@@ -105,8 +105,7 @@ export default function About() {
             {principles.map((p, i) => (
               <ScrollReveal key={p.number} delay={i * 0.1}>
                 <div>
-                  <div className="text-xs font-mono text-foreground-faint mb-4">{p.number}</div>
-                  <h3 className="font-display font-semibold text-foreground text-lg mb-3">{p.title}</h3>
+<h3 className="font-display font-semibold text-foreground text-lg mb-3">{p.title}</h3>
                   <p className="text-sm text-foreground-muted leading-relaxed">{p.desc}</p>
                 </div>
               </ScrollReveal>

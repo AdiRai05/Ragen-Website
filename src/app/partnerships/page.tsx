@@ -147,8 +147,7 @@ export default function PartnershipsPage() {
             {partnerModels.map((model, i) => (
               <ScrollReveal key={model.number} delay={i * 0.1}>
                 <div className="bg-surface border border-stroke rounded-2xl p-8 lg:p-10 h-full flex flex-col hover:border-accent-blue/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-black/20">
-                  <span className="text-xs font-mono text-accent-blue mb-6 block">{model.number}</span>
-                  <h3 className="text-xl font-display font-bold text-foreground mb-2">{model.title}</h3>
+<h3 className="text-xl font-display font-bold text-foreground mb-2">{model.title}</h3>
                   <p className="text-sm text-foreground-muted mb-3">{model.tagline}</p>
                   <p className="text-sm text-foreground-muted leading-relaxed mb-8">{model.desc}</p>
                   <ul className="space-y-3 mt-auto">
@@ -185,8 +184,7 @@ export default function PartnershipsPage() {
                     <div className="hidden lg:block absolute top-[19px] left-8 right-0 h-px bg-stroke" />
                   )}
                   <div className="absolute top-[16px] left-0 w-[7px] h-[7px] rounded-full bg-accent-blue" />
-                  <div className="text-xs font-mono text-foreground-faint mb-4">{item.step}</div>
-                  <h4 className="font-display font-semibold text-foreground text-sm mb-2">{item.title}</h4>
+<h4 className="font-display font-semibold text-foreground text-sm mb-2">{item.title}</h4>
                   <p className="text-xs text-foreground-muted leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>

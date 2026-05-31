@@ -74,8 +74,7 @@ export default function AIPage() {
                   </div>
                 </div>
                 <div>
-                  <div className="text-xs font-mono text-foreground-faint mb-4">{cap.number}</div>
-                  <h3 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-4">{cap.title}</h3>
+<h3 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-4">{cap.title}</h3>
                   <p className="text-foreground-muted leading-relaxed mb-6">{cap.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {cap.tags.map((tag) => (
@@ -102,8 +101,7 @@ export default function AIPage() {
             {['Start with the problem. AI is a means, not an end.', 'Ship to production, not demos. Build for real users from day one.', 'Measure what matters. Define success metrics before writing code.', 'Keep humans in the loop. The best AI knows when to escalate.', 'Use the right model. Not everything needs GPT-4.', 'Build for change. The AI landscape shifts monthly.'].map((p, i) => (
               <ScrollReveal key={i} delay={i * 0.07}>
                 <div className="p-6 rounded-xl border border-stroke bg-surface-secondary/30 hover:border-accent-blue/20 hover:bg-surface-secondary/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-black/10">
-                  <div className="text-xs font-mono text-foreground-faint mb-3">{`0${i + 1}`}</div>
-                  <p className="text-sm text-foreground-muted leading-relaxed">{p}</p>
+<p className="text-sm text-foreground-muted leading-relaxed">{p}</p>
                 </div>
               </ScrollReveal>
             ))}
