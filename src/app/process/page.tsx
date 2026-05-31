@@ -67,10 +67,7 @@ export default function ProcessPage() {
           {fullProcess.map((step, i) => (
             <ScrollReveal key={step.number} delay={i * 0.05}>
               <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 py-16 lg:py-20 border-b border-stroke-subtle last:border-b-0">
-                <div className="lg:col-span-2">
-                  <div className="text-4xl lg:text-5xl font-display font-bold text-foreground-faint/15">{step.number}</div>
-                </div>
-                <div className="lg:col-span-6">
+<div className="lg:col-span-6">
                   <h3 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-4">{step.title}</h3>
                   <p className="text-foreground-muted leading-relaxed">{step.desc}</p>
                 </div>

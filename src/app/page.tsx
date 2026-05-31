@@ -175,7 +175,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-stroke">
-                <Image src={images.codeAbstract} alt="" width={700} height={525} className="w-full h-full object-cover opacity-90" />
+                <Image src={images.techPattern} alt="" width={700} height={525} className="w-full h-full object-cover opacity-90" />
               </div>
             </ScrollReveal>
           </div>
