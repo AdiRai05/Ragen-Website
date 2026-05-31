@@ -1,16 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact',
+  title: 'Contact Ragen — Hire Software Developers | Start Your Project',
   description:
-    'Get in touch with Ragen. Tell us what you need to build and we will respond within a few hours. No pitch deck — just a conversation.',
+    'Contact Ragen, a software development company. Tell us about your web, mobile, SaaS, or AI project and get a response within hours. Start a trial sprint today.',
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
-    title: 'Contact Ragen - Software Studio',
+    title: 'Contact Ragen — Software Development Company',
     description:
-      'Get in touch with Ragen. Tell us what you need to build and we will respond within a few hours.',
+      'Get in touch with Ragen. Tell us about your project and we will respond within a few hours.',
     url: 'https://ragen.org/contact',
   },
 };

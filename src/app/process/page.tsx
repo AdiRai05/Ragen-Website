@@ -5,17 +5,27 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { images } from '@/data/images';
 
 export const metadata: Metadata = {
-  title: 'Process',
+  title: 'Our Software Development Process — Ragen | Discovery to Launch',
   description:
-    'How Ragen takes projects from conversation to production. Discovery, strategy, design, development, and launch — with direct access to senior engineers at every step.',
+    'How Ragen delivers software projects: 7-step process from discovery and strategy through design, development, QA, deployment, and handoff. Predictable, transparent, risk-free.',
   alternates: {
     canonical: '/process',
   },
   openGraph: {
-    title: 'Our Process - Ragen',
+    title: 'Our Software Development Process — Ragen',
     description:
-      'From conversation to production: Discovery, strategy, design, development, and launch. Direct access to senior engineers at every step.',
+      'From conversation to production: Discovery, strategy, design, development, QA, deployment, and handoff. Senior engineers at every step.',
     url: 'https://ragen.org/process',
+    siteName: 'Ragen',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/images/eloxee-1.jpg', width: 1200, height: 630, alt: 'Ragen — Software Development Company' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ragen — Software Development Company',
+    description: 'Premium software development. Web apps, SaaS, mobile, AI, cloud. Senior engineers, predictable delivery.',
+    images: ['/images/eloxee-1.jpg'],
   },
 };
 
@@ -35,13 +45,12 @@ export default function ProcessPage() {
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-28">
         <div className="absolute inset-0">
-          <Image src={images.darkGeometric} alt="" fill className="object-cover opacity-25" unoptimized />
+          <Image src={images.darkGeometric} alt="" fill className="object-cover opacity-25" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/70 to-surface/95" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">How We Work</div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[0.96] tracking-[-0.03em] text-foreground mb-8 text-balance">
                 A process designed<br />
                 <span className="gradient-text">to reduce risk.</span>

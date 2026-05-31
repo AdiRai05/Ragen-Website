@@ -5,17 +5,27 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { images } from '@/data/images';
 
 export const metadata: Metadata = {
-  title: 'AI Solutions',
+  title: 'AI Development Services — Ragen | LLM, RAG, AI Agents & Automation',
   description:
-    'LLM-powered features, RAG pipelines, intelligent agents, and workflow automation that ships to production — not just demos. AI engineering that delivers real business value.',
+    'Ragen builds production-ready AI solutions: LLM-powered features, RAG pipelines, AI agents, intelligent automation. Practical AI engineering that delivers real business value, not just demos.',
   alternates: {
     canonical: '/ai',
   },
   openGraph: {
-    title: 'AI Solutions - Ragen',
+    title: 'AI Development Services — Ragen | LLM, RAG, Agents & Automation',
     description:
-      'LLM-powered features, RAG pipelines, intelligent agents, and workflow automation that ships to production.',
+      'LLM-powered features, RAG pipelines, AI agents, and workflow automation that ships to production. Real AI engineering that delivers business results.',
     url: 'https://ragen.org/ai',
+    siteName: 'Ragen',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/images/eloxee-1.jpg', width: 1200, height: 630, alt: 'Ragen — Software Development Company' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ragen — Software Development Company',
+    description: 'Premium software development. Web apps, SaaS, mobile, AI, cloud. Senior engineers, predictable delivery.',
+    images: ['/images/eloxee-1.jpg'],
   },
 };
 
@@ -32,13 +42,12 @@ export default function AIPage() {
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-28">
         <div className="absolute inset-0">
-          <Image src={images.aiAbstract} alt="" fill className="object-cover opacity-30" unoptimized />
+          <Image src={images.aiAbstract} alt="" fill className="object-cover opacity-30" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/70 to-surface/95" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">AI &amp; Automation</div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[0.96] tracking-[-0.03em] text-foreground mb-8 text-balance">
                 AI that <span className="gradient-text">actually ships.</span><br />Not just a demo.
               </h1>
@@ -55,15 +64,13 @@ export default function AIPage() {
             <ScrollReveal key={cap.number} delay={i * 0.1}>
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 py-16 lg:py-20 border-b border-stroke-subtle last:border-b-0 items-center">
                 <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="aspect-[16/10] rounded-2xl overflow-hidden border border-stroke">
+                  <div className="aspect-[16/10] rounded-2xl overflow-hidden border border-stroke group hover:border-accent-blue/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-black/20">
                     <Image
                       src={i === 0 ? images.aiAbstract : i === 1 ? images.codeAbstract : i === 2 ? images.circuitBoard : images.gradientFluid}
-                      alt=""
+                      alt={cap.title}
                       width={800}
                       height={500}
-                      className="w-full h-full object-cover"
-                      unoptimized
-                    />
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                 </div>
                 <div>
@@ -94,7 +101,7 @@ export default function AIPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl">
             {['Start with the problem. AI is a means, not an end.', 'Ship to production, not demos. Build for real users from day one.', 'Measure what matters. Define success metrics before writing code.', 'Keep humans in the loop. The best AI knows when to escalate.', 'Use the right model. Not everything needs GPT-4.', 'Build for change. The AI landscape shifts monthly.'].map((p, i) => (
               <ScrollReveal key={i} delay={i * 0.07}>
-                <div className="p-6 rounded-xl border border-stroke bg-surface-secondary/30">
+                <div className="p-6 rounded-xl border border-stroke bg-surface-secondary/30 hover:border-accent-blue/20 hover:bg-surface-secondary/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-black/10">
                   <div className="text-xs font-mono text-foreground-faint mb-3">{`0${i + 1}`}</div>
                   <p className="text-sm text-foreground-muted leading-relaxed">{p}</p>
                 </div>

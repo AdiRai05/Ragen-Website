@@ -34,19 +34,14 @@ export function ServiceDetail({ slug }: ServiceDetailProps) {
         <div className="absolute inset-0">
           <Image
             src={serviceImages[slug] || images.codeAbstract}
-            alt=""
+            alt={service.title}
             fill
-            className="object-cover opacity-30"
-            unoptimized
-          />
+            className="object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-surface/85 via-surface/60 to-surface/95" />
         </div>
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="text-xs font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-6">
-                Service — {service.number}
-              </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[0.96] tracking-[-0.03em] text-foreground mb-6">
                 {service.title}
               </h1>
@@ -117,8 +112,7 @@ export function ServiceDetail({ slug }: ServiceDetailProps) {
             </p>
             <Link
               href="/contact"
-              className="inline-flex px-8 py-3.5 bg-white hover:bg-white/90 text-black font-medium text-sm rounded-xl transition-all"
-            >
+              className="inline-flex px-8 py-3.5 bg-white hover:bg-white/90 text-black font-medium text-sm rounded-xl transition-all">
               Start a Conversation
             </Link>
           </ScrollReveal>

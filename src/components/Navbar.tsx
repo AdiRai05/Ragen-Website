@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
@@ -19,8 +20,10 @@ const navLinks = [
     ],
   },
   { label: 'About', href: '/about' },
+  { label: 'Process', href: '/process' },
   { label: 'Partnerships', href: '/partnerships' },
   { label: 'AI', href: '/ai' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -92,7 +95,7 @@ export function Navbar() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
-            <img src="/logo.png" alt="Ragen" className="h-11 w-auto" />
+            <Image src="/logo.png" alt="Ragen" width={44} height={44} className="h-11 w-auto" priority />
           </Link>
 
           {/* Desktop Links */}

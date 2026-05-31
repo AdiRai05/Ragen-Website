@@ -55,15 +55,12 @@
         {/* Hero */}
         <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-28 overflow-hidden">
           <div className="absolute inset-0">
-            <Image src={images.darkGeometric} alt="" fill className="object-cover opacity-20" unoptimized />
+            <Image src={images.darkGeometric} alt="" fill className="object-cover opacity-20" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/70 to-surface/95" />
           <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
             <ScrollReveal>
               <div className="max-w-3xl">
-                <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">
-                  Contact
-                </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[0.96] tracking-[-0.03em] text-foreground mb-8">
                   Let&rsquo;s talk about
                   <br />
@@ -96,8 +93,7 @@
                     </p>
                     <button
                       onClick={() => { setSubmitted(false); setForm({ name: '', email: '', company: '', message: '' }); }}
-                      className="text-sm text-accent-blue hover:text-accent-violet transition-colors"
-                    >
+                      className="text-sm text-accent-blue hover:text-accent-violet transition-colors">
                       Send another message
                     </button>
                   </div>
@@ -115,8 +111,7 @@
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         className="w-full px-4 py-3 bg-surface-secondary border border-stroke rounded-xl text-sm text-foreground
   placeholder:text-foreground-faint focus:outline-none focus:border-accent-blue transition-colors"
-                        placeholder="Your name"
-                      />
+                        placeholder="Your name" />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-xs text-foreground-muted mb-2">
@@ -130,8 +125,7 @@
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         className="w-full px-4 py-3 bg-surface-secondary border border-stroke rounded-xl text-sm text-foreground
   placeholder:text-foreground-faint focus:outline-none focus:border-accent-blue transition-colors"
-                        placeholder="you@company.com"
-                      />
+                        placeholder="you@company.com" />
                     </div>
                     <div>
                       <label htmlFor="company" className="block text-xs text-foreground-muted mb-2">
@@ -144,8 +138,7 @@
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
                         className="w-full px-4 py-3 bg-surface-secondary border border-stroke rounded-xl text-sm text-foreground
   placeholder:text-foreground-faint focus:outline-none focus:border-accent-blue transition-colors"
-                        placeholder="Your company"
-                      />
+                        placeholder="Your company" />
                     </div>
                     <div>
                       <label htmlFor="message" className="block text-xs text-foreground-muted mb-2">
@@ -159,14 +152,12 @@
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
                         className="w-full px-4 py-3 bg-surface-secondary border border-stroke rounded-xl text-sm text-foreground
   placeholder:text-foreground-faint focus:outline-none focus:border-accent-blue transition-colors resize-none"
-                        placeholder="Tell us about your project, timeline, and what kind of help you need..."
-                      />
+                        placeholder="Tell us about your project, timeline, and what kind of help you need..." />
                     </div>
                     <button
                       type="submit"
                       disabled={sending}
-                      className="w-full py-3.5 bg-white hover:bg-white/90 text-black font-medium text-sm rounded-xl transition-all disabled:opacity-60"
-                    >
+                      className="w-full py-3.5 bg-white hover:bg-white/90 text-black font-medium text-sm rounded-xl transition-all disabled:opacity-60">
                       {sending ? 'Sending...' : 'Send Message'}
                     </button>
                   </form>
@@ -182,8 +173,7 @@
                     </h3>
                     <a
                       href="mailto:ragen@ragen.org"
-                      className="text-xl font-display font-medium text-foreground hover:text-accent-blue transition-colors"
-                    >
+                      className="text-xl font-display font-medium text-foreground hover:text-accent-blue transition-colors">
                       ragen@ragen.org
                     </a>
                     <p className="text-sm text-foreground-muted mt-2">
@@ -197,8 +187,7 @@
                     </h3>
                     <a
                       href="tel:+917078082045"
-                      className="text-xl font-display font-medium text-foreground hover:text-accent-blue transition-colors"
-                    >
+                      className="text-xl font-display font-medium text-foreground hover:text-accent-blue transition-colors">
                       +91 70780 82045
                     </a>
                     <p className="text-sm text-foreground-muted mt-2">
@@ -240,8 +229,7 @@
                   <div className="pt-6 border-t border-stroke">
                     <Link
                       href="/process"
-                      className="text-sm text-foreground-muted hover:text-foreground transition-colors flex items-center gap-2"
-                    >
+                      className="text-sm text-foreground-muted hover:text-foreground transition-colors flex items-center gap-2">
                       Learn more about our process
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M5 12h14M12 5l7 7-7 7" />
@@ -255,6 +243,23 @@
         </section>
 
         {/* FAQ */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map((faq) => ({
+                '@type': 'Question',
+                name: faq.q,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.a,
+                },
+              })),
+            }),
+          }}
+        />
         <section className="py-16 lg:py-24 border-t border-stroke-subtle">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
             <ScrollReveal>

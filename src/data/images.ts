@@ -1,27 +1,24 @@
 export const images = {
-  // Custom AI-generated hero image
-  heroBg: '/hero-image.png',
-  codeAbstract:
-    'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
-  darkGeometric:
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80',
-  techPattern:
-    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
-  darkWorkspace:
-    'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
-  serverRoom:
-    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
-  aiAbstract:
-    'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80',
-  designAbstract:
-    'https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&w=1200&q=80',
-  gradientFluid:
-    'https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&w=1200&q=80',
-  // Additional images
-  dashboard:
-    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
-  circuitBoard:
-    'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
-  darkArchitecture:
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80',
+  // All images are unique — no duplicates. Eloxee project imagery.
+  heroBg: '/images/eloxee-1.jpg',
+  codeAbstract: '/images/eloxee-2.jpg',
+  darkGeometric: '/images/eloxee-3.jpg',
+  techPattern: '/images/eloxee-4.jpg',
+  darkWorkspace: '/images/eloxee-5.jpg',
+  serverRoom: '/images/eloxee-6.jpg',
+  aiAbstract: '/images/eloxee-7.jpg',
+  designAbstract: '/images/eloxee-8.jpg',
+  gradientFluid: '/images/eloxee-9.jpg',
+  dashboard: '/images/eloxee-10.jpg',
+  circuitBoard: '/images/eloxee-11.jpg',
+  darkArchitecture: '/images/eloxee-12.jpg',
+  // Additional unique images for other page sections
+  heroAlt: '/images/eloxee-13.jpg',
+  processBg: '/images/eloxee-14.jpg',
+  testimonialBg: '/images/eloxee-15.jpg',
+  ctaBg: '/images/eloxee-16.jpg',
+  partnershipBg: '/images/eloxee-17.jpg',
+  aboutBg: '/images/eloxee-18.jpg',
+  workBg: '/images/eloxee-19.jpg',
+  contactBg: '/images/eloxee-20.jpg',
 } as const;

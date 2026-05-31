@@ -6,25 +6,35 @@ import { services } from '@/data/services';
 import { images } from '@/data/images';
 
 export const metadata: Metadata = {
-  title: 'Services',
+  title: 'Software Development Services — Web, Mobile, SaaS, AI & Cloud',
   description:
-    'Custom web development, SaaS development, mobile apps, UI/UX design, AI integrations, and cloud DevOps. Senior engineers only — no juniors touching production code.',
+    'Ragen offers custom software development services: web apps, SaaS platforms, mobile apps (iOS & Android), UI/UX design, AI integrations, and cloud DevOps. Senior engineers, predictable delivery.',
   alternates: {
     canonical: '/services',
   },
   openGraph: {
-    title: 'Services - Ragen',
+    title: 'Software Development Services — Ragen | Web, Mobile, SaaS, AI',
     description:
-      'Custom web development, SaaS development, mobile apps, UI/UX design, AI integrations, and cloud DevOps — all with senior engineers.',
+      'Custom software development services: web apps, SaaS, mobile apps, UI/UX design, AI integrations, and cloud DevOps — all with senior engineers.',
     url: 'https://ragen.org/services',
+    siteName: 'Ragen',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/images/eloxee-1.jpg', width: 1200, height: 630, alt: 'Ragen — Software Development Company' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ragen — Software Development Company',
+    description: 'Premium software development. Web apps, SaaS, mobile, AI, cloud. Senior engineers, predictable delivery.',
+    images: ['/images/eloxee-1.jpg'],
   },
 };
 
 const serviceImages: Record<string, string> = {
   'web-development': images.codeAbstract,
-  'saas-development': '/hero-image.png',
+  'saas-development': images.dashboard,
   'mobile-development': images.designAbstract,
-  'ui-ux-design': images.codeAbstract,
+  'ui-ux-design': images.heroAlt,
   'ai-integrations': images.aiAbstract,
   'cloud-devops': images.serverRoom,
 };
@@ -35,13 +45,12 @@ export default function ServicesPage() {
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-28">
         <div className="absolute inset-0">
-          <Image src={images.techPattern} alt="" fill className="object-cover opacity-25" unoptimized />
+          <Image src={images.techPattern} alt="" fill className="object-cover opacity-25" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/75 to-surface/95" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">What We Build</div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[0.96] tracking-[-0.03em] text-foreground mb-8 text-balance">
                 Six services.<br />
                 <span className="gradient-text">One standard.</span>
@@ -60,15 +69,13 @@ export default function ServicesPage() {
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 {/* Image */}
                 <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-stroke">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-stroke group hover:border-accent-blue/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-black/20">
                     <Image
                       src={serviceImages[service.slug] || images.codeAbstract}
-                      alt=""
+                      alt={service.title}
                       width={700}
                       height={525}
-                      className="w-full h-full object-cover"
-                      unoptimized
-                    />
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                 </div>
 

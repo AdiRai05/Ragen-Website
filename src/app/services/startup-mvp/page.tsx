@@ -3,17 +3,27 @@ import Link from 'next/link';
 import { ScrollReveal } from '@/components/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: 'Startup MVP Development',
+  title: 'Startup MVP Development Services — Ragen | Ship in Weeks',
   description:
-    'From napkin sketch to working product in weeks, not months. We help founders validate ideas, ship MVPs, and reach the milestones that matter to investors.',
+    'Ragen builds startup MVPs in 4-8 weeks. From napkin sketch to working product with clean code and investor-ready documentation. Validate fast, ship faster.',
   alternates: {
     canonical: '/services/startup-mvp',
   },
   openGraph: {
-    title: 'Startup MVP Development - Ragen',
+    title: 'Startup MVP Development — Ragen | Ship in Weeks',
     description:
       'From napkin sketch to working product in weeks, not months. Validate fast, ship in weeks, investor-ready output.',
     url: 'https://ragen.org/services/startup-mvp',
+    siteName: 'Ragen',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/images/eloxee-1.jpg', width: 1200, height: 630, alt: 'Ragen — Software Development Company' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ragen — Software Development Company',
+    description: 'Premium software development. Web apps, SaaS, mobile, AI, cloud. Senior engineers, predictable delivery.',
+    images: ['/images/eloxee-1.jpg'],
   },
 };
 
@@ -24,7 +34,6 @@ export default function StartupMVPPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="text-xs font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-6">Service</div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[0.96] tracking-[-0.03em] text-foreground mb-6">
                 Startup MVP<br />
                 <span className="gradient-text">Development</span>
@@ -46,7 +55,7 @@ export default function StartupMVPPage() {
               { title: 'Investor-ready output', desc: 'Clean code, proper infrastructure, and documentation that passes technical due diligence. Not throwaway prototype code.' },
             ].map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="p-8 bg-surface-secondary border border-stroke rounded-2xl">
+                <div className="p-8 bg-surface-secondary border border-stroke rounded-2xl hover:border-accent-blue/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-black/10 hover:bg-surface-elevated">
                   <div className="text-xs font-mono text-foreground-faint mb-4">{`0${i + 1}`}</div>
                   <h3 className="font-display font-semibold text-foreground text-lg mb-3">{item.title}</h3>
                   <p className="text-sm text-foreground-muted leading-relaxed">{item.desc}</p>

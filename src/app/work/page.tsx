@@ -5,22 +5,32 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { images } from '@/data/images';
 
 export const metadata: Metadata = {
-  title: 'Work',
+  title: 'Portfolio — Software Projects by Ragen | SaaS, AI, Mobile Apps',
   description:
-    'Selected projects from the Ragen portfolio. SaaS platforms, AI-powered tools, mobile apps, and platform migrations — built for startups, agencies, and enterprises.',
+    'Explore Ragen\'s software development portfolio: multi-tenant SaaS platforms, AI-powered document processing, mobile banking apps, and e-commerce platform migrations.',
   alternates: {
     canonical: '/work',
   },
   openGraph: {
-    title: 'Our Work - Ragen',
+    title: 'Our Work — Ragen Software Development Portfolio',
     description:
-      'Selected projects: SaaS platforms, AI-powered tools, mobile apps, and platform migrations built for startups, agencies, and enterprises.',
+      'Selected software projects: SaaS platforms, AI-powered tools, mobile apps, and platform migrations built for startups, agencies, and enterprises.',
     url: 'https://ragen.org/work',
+    siteName: 'Ragen',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/images/eloxee-1.jpg', width: 1200, height: 630, alt: 'Ragen — Software Development Company' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ragen — Software Development Company',
+    description: 'Premium software development. Web apps, SaaS, mobile, AI, cloud. Senior engineers, predictable delivery.',
+    images: ['/images/eloxee-1.jpg'],
   },
 };
 
 const projects = [
-  { title: 'Multi-tenant SaaS Platform', category: 'SaaS Development', desc: 'Designed and built a multi-tenant SaaS platform from scratch. Subscription management, tenant isolation, usage-based billing, and a customer-facing dashboard.', tech: ['Next.js', 'PostgreSQL', 'Stripe', 'Redis', 'Docker'], img: '/hero-image.png' },
+  { title: 'Multi-tenant SaaS Platform', category: 'SaaS Development', desc: 'Designed and built a multi-tenant SaaS platform from scratch. Subscription management, tenant isolation, usage-based billing, and a customer-facing dashboard.', tech: ['Next.js', 'PostgreSQL', 'Stripe', 'Redis', 'Docker'], img: images.dashboard },
   { title: 'AI-Powered Document Processing', category: 'AI & Automation', desc: 'Built a RAG pipeline that processes thousands of legal documents daily. Users query in natural language and get cited answers from their document corpus.', tech: ['Python', 'LangChain', 'FastAPI', 'OpenAI', 'Vector DB'], img: images.aiAbstract },
   { title: 'Mobile Banking Application', category: 'Mobile Development', desc: 'Developed a cross-platform mobile banking app with offline-first architecture, biometric auth, push notifications, and deep link routing.', tech: ['React Native', 'Node.js', 'PostgreSQL', 'Firebase'], img: images.designAbstract },
   { title: 'E-Commerce Platform Migration', category: 'Web Development', desc: 'Migrated a legacy e-commerce platform to a modern microservices architecture. Zero downtime during cutover. 3x improvement in page load times.', tech: ['Next.js', 'Go', 'Kubernetes', 'AWS', 'GraphQL'], img: images.serverRoom },
@@ -32,13 +42,12 @@ export default function WorkPage() {
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-28">
         <div className="absolute inset-0">
-          <Image src={images.codeAbstract} alt="" fill className="object-cover opacity-25" unoptimized />
+          <Image src={images.codeAbstract} alt="" fill className="object-cover opacity-25" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/70 to-surface/95" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">Work</div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[0.96] tracking-[-0.03em] text-foreground mb-8 text-balance">
                 Projects we are<br />
                 <span className="gradient-text">proud of.</span>
@@ -54,10 +63,10 @@ export default function WorkPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           {projects.map((project, i) => (
             <ScrollReveal key={project.title} delay={i * 0.1}>
-              <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 py-16 lg:py-24 border-b border-stroke-subtle last:border-b-0 items-center">
+              <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 py-16 lg:py-24 border-b border-stroke-subtle last:border-b-0 items-center group hover:bg-surface-secondary/20 transition-colors rounded-2xl px-4 -mx-4">
                 <div className="lg:col-span-4">
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-stroke">
-                    <Image src={project.img} alt="" width={500} height={375} className="w-full h-full object-cover" unoptimized />
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-stroke group-hover:border-accent-blue/20 transition-all duration-300 hover:scale-[1.02]">
+                    <Image src={project.img} alt={project.title} width={500} height={375} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                 </div>
                 <div className="lg:col-span-6">

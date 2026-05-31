@@ -60,6 +60,30 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Card hover pop-out effect */
+  .card-pop {
+    @apply transition-all duration-300;
+  }
+
+  .card-pop:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3);
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+
+  /* Service card image zoom */
+  .card-img-zoom {
+    @apply overflow-hidden;
+  }
+
+  .card-img-zoom img {
+    @apply transition-transform duration-500;
+  }
+
+  .card-img-zoom:hover img {
+    transform: scale(1.05);
+  }
 }
 
 @layer utilities {

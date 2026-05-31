@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const socialLinks = [
   {
@@ -58,6 +59,7 @@ const footerLinks = {
     { label: 'Work', href: '/work' },
     { label: 'Process', href: '/process' },
     { label: 'Partnerships', href: '/partnerships' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact' },
   ],
 };
@@ -68,7 +70,9 @@ export function Footer() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
         {/* Top: Logo + Brand Statement */}
         <div className="mb-16 lg:mb-20">
-          <img src="/logo.png" alt="Ragen" className="h-10 w-auto mb-8" />
+          <Link href="/" className="inline-block">
+            <Image src="/logo.png" alt="Ragen" width={40} height={40} className="h-10 w-auto mb-8" />
+          </Link>
           <p className="text-2xl lg:text-3xl font-display font-medium text-foreground max-w-2xl text-balance leading-snug">
             A development studio at the intersection of engineering precision and design craft.
           </p>

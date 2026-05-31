@@ -3,17 +3,27 @@ import Link from 'next/link';
 import { ScrollReveal } from '@/components/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: 'Custom Web Development',
+  title: 'Custom Web Application Development Services — Ragen',
   description:
-    'Full-stack web applications built with modern frameworks. React, Next.js, Node, Python, Go — real software that runs businesses. Not brochure sites.',
+    'Full-stack web application development with React, Next.js, Node.js, Python, and Go. Ragen builds dashboards, marketplaces, internal tools, and customer portals.',
   alternates: {
     canonical: '/services/web-development',
   },
   openGraph: {
-    title: 'Custom Web Development - Ragen',
+    title: 'Web Development Services — Ragen | React, Next.js, Node.js',
     description:
-      'Full-stack web applications built with modern frameworks. Dashboards, marketplaces, internal tools, and customer portals.',
+      'Full-stack web development: dashboards, marketplaces, internal tools, and customer portals built with modern frameworks.',
     url: 'https://ragen.org/services/web-development',
+    siteName: 'Ragen',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/images/eloxee-1.jpg', width: 1200, height: 630, alt: 'Ragen — Software Development Company' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ragen — Software Development Company',
+    description: 'Premium software development. Web apps, SaaS, mobile, AI, cloud. Senior engineers, predictable delivery.',
+    images: ['/images/eloxee-1.jpg'],
   },
 };
 
@@ -24,9 +34,6 @@ export default function WebDevPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="text-xs font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-6">
-                Service
-              </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[0.96] tracking-[-0.03em] text-foreground mb-6">
                 Custom Web<br />
                 <span className="gradient-text">Development</span>

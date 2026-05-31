@@ -8,20 +8,41 @@ import { techStack } from '@/data/tech-stack';
 import { images } from '@/data/images';
 
 export const metadata: Metadata = {
+  title: 'Ragen — Software Development Company | Web, Mobile & SaaS Apps',
+  description:
+    'Ragen is a software development company based in India. We build web applications, mobile apps, SaaS platforms, and AI solutions for startups, agencies, and enterprises. Hire senior developers.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Ragen - Software Studio',
+    title: 'Ragen — Software Development Company | Web, Mobile & SaaS',
     description:
-      'A development studio that operates at the intersection of engineering precision and design craft. We build software for startups, scale-ups, and enterprises.',
+      'Ragen is a software development company. We build web apps, mobile apps, SaaS platforms, AI solutions. Senior engineers, predictable delivery.',
     url: 'https://ragen.org',
+    siteName: 'Ragen',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/images/eloxee-1.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Ragen — Premium Software Development Company',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ragen — Software Development Company',
+    description:
+      'Premium software development. Web apps, SaaS, mobile, AI, cloud. Senior engineers, predictable delivery.',
+    images: ['/images/eloxee-1.jpg'],
   },
 };
 
 const stats = [
   { value: 40, suffix: '+', label: 'Projects shipped' },
-  { value: 4, suffix: '+', label: 'Avg. years per engineer' },
+  { value: 6, suffix: '+', label: 'Years per engineer' },
   { value: 92, suffix: '%', label: 'Client return rate' },
 ];
 
@@ -41,24 +62,20 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center">
         {/* Hero background image - 35% opacity */}
         <div className="absolute inset-0">
-          <Image src={images.heroBg} alt="" fill className="object-cover opacity-50" priority />
+          <Image src={images.heroBg} alt="Software development team building applications" fill className="object-cover opacity-50" priority />
         </div>
         {/* Dark gradient overlay - left side darker for text, right side lighter for image visibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-surface/90 via-surface/50 to-surface/10" />
 
         <div className="relative w-full max-w-[1400px] mx-auto px-6 lg:px-10 py-32 lg:py-48">
           <div className="max-w-3xl">
-            <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-8">
-              Software Studio &bull; {new Date().getFullYear()}
-            </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[0.94] tracking-[-0.03em] text-foreground mb-8 text-balance">
-              We build the software<br />
-              other companies<br />
-              <span className="gradient-text">wish they could.</span>
+              Ragen — Software<br />
+              development company<br />
+              <span className="gradient-text">that actually delivers.</span>
             </h1>
             <p className="text-lg lg:text-xl text-foreground-muted max-w-xl leading-relaxed text-balance">
-              A development studio that operates at the intersection of engineering
-              precision and design craft.
+              Ragen is a <strong className="text-foreground">software development company</strong> based in India. We build web applications, mobile apps, SaaS platforms, and AI solutions for startups, agencies, and enterprises worldwide.
             </p>
           </div>
         </div>
@@ -69,11 +86,6 @@ export default function Home() {
           ══════════════════════════════════════ */}
       <section className="py-16 lg:py-20 border-t border-stroke-subtle">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <ScrollReveal>
-            <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-faint mb-8 text-center">
-              Trusted by teams from
-            </div>
-          </ScrollReveal>
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
             {[
               'Portland Design Co.',
@@ -97,7 +109,7 @@ export default function Home() {
       <section className="relative py-24 lg:py-32 border-t border-stroke-subtle">
         {/* Background image */}
         <div className="absolute inset-0">
-          <Image src={images.codeAbstract} alt="" fill className="object-cover opacity-25 object-left" unoptimized />
+          <Image src={images.codeAbstract} alt="" fill className="object-cover opacity-25 object-left" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-surface/85 via-surface/70 to-surface/95" />
 
@@ -105,7 +117,6 @@ export default function Home() {
           <ScrollReveal>
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 items-start mb-20 lg:mb-28">
               <div>
-                <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">What We Believe</div>
                 <p className="text-2xl lg:text-[1.75rem] font-display font-medium text-foreground leading-[1.25] text-balance">
                   Most agencies overpromise and underdeliver. Most dev shops ship spaghetti code. We figured there had to be a better way.
                 </p>
@@ -140,7 +151,6 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="mb-16 lg:mb-24">
-              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">Capabilities</div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-foreground mb-4">
                 Engineering that lasts longer than the sprint it was built in.
               </h2>
@@ -166,7 +176,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-stroke">
-                <Image src={images.codeAbstract} alt="" width={700} height={525} className="w-full h-full object-cover opacity-90" unoptimized />
+                <Image src={images.codeAbstract} alt="" width={700} height={525} className="w-full h-full object-cover opacity-90" />
               </div>
             </ScrollReveal>
           </div>
@@ -187,7 +197,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal delay={0.1} className="lg:order-1">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-stroke">
-                <Image src={images.designAbstract} alt="" width={700} height={525} className="w-full h-full object-cover opacity-90" unoptimized />
+                <Image src={images.designAbstract} alt="" width={700} height={525} className="w-full h-full object-cover opacity-90" />
               </div>
             </ScrollReveal>
           </div>
@@ -208,7 +218,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-stroke">
-                <Image src={images.serverRoom} alt="" width={700} height={525} className="w-full h-full object-cover opacity-90" unoptimized />
+                <Image src={images.serverRoom} alt="" width={700} height={525} className="w-full h-full object-cover opacity-90" />
               </div>
             </ScrollReveal>
           </div>
@@ -222,7 +232,6 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="mb-16 lg:mb-20">
-              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">What We Do</div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-foreground mb-4">
                 Most of what we build falls into a few buckets.
               </h2>
@@ -234,25 +243,23 @@ export default function Home() {
             {services.map((service) => {
               const cardImages: Record<string, string> = {
                 'web-development': images.codeAbstract,
-                'saas-development': '/hero-image.png',
+                'saas-development': images.dashboard,
                 'mobile-development': images.designAbstract,
-                'ui-ux-design': images.codeAbstract,
+                'ui-ux-design': images.heroAlt,
                 'ai-integrations': images.aiAbstract,
                 'cloud-devops': images.serverRoom,
               };
               return (
                 <ScrollReveal key={service.id} delay={0.05}>
-                  <Link href={`/services/${service.slug}`} className="group block bg-surface hover:bg-surface-elevated transition-colors h-full">
+                  <Link href={`/services/${service.slug}`} className="group block bg-surface hover:bg-surface-elevated transition-all duration-300 h-full rounded-2xl hover:scale-[1.02] hover:shadow-xl hover:shadow-black/10 border border-transparent hover:border-accent-blue/20">
                     {/* Card image */}
                     <div className="aspect-[16/9] overflow-hidden">
                       <Image
                         src={cardImages[service.slug] || images.codeAbstract}
-                        alt=""
+                        alt={service.title}
                         width={400}
                         height={225}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        unoptimized
-                      />
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className="p-8 lg:p-10">
                       <div className="text-xs font-mono text-foreground-faint mb-3">{service.number}</div>
@@ -276,14 +283,13 @@ export default function Home() {
           ══════════════════════════════════════ */}
       <section className="relative py-24 lg:py-32 border-t border-stroke-subtle">
         <div className="absolute inset-0">
-          <Image src={images.darkGeometric} alt="" fill className="object-cover opacity-20" unoptimized />
+          <Image src={images.darkGeometric} alt="" fill className="object-cover opacity-20" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-surface/80 via-surface/90 to-surface" />
 
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="mb-16 lg:mb-20">
-              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">How We Work</div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-foreground mb-4">A process that makes sense.</h2>
               <p className="text-lg text-foreground-muted max-w-xl">This is how we take something from conversation to production.</p>
             </div>
@@ -297,7 +303,7 @@ export default function Home() {
                   <div className="absolute top-[16px] left-0 w-[7px] h-[7px] rounded-full bg-accent-blue" />
                   <div className="text-xs font-mono text-foreground-faint mb-4">{step.number}</div>
                   <h4 className="font-display font-semibold text-foreground text-sm mb-2 leading-snug">{step.title}</h4>
-                  <p className="text-xs text-foreground-muted leading-relaxed">{step.description.length > 120 ? step.description.slice(0, 120) + '…' : step.description}</p>
+                  <p className="text-xs text-foreground-muted leading-relaxed">{step.description.length> 120 ? step.description.slice(0, 120) + '…' : step.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -336,13 +342,12 @@ export default function Home() {
           ══════════════════════════════════════ */}
       <section className="relative py-24 lg:py-32 border-t border-stroke-subtle overflow-hidden">
         <div className="absolute inset-0">
-          <Image src={images.circuitBoard} alt="" fill className="object-cover opacity-[0.12]" unoptimized />
+          <Image src={images.circuitBoard} alt="" fill className="object-cover opacity-[0.12]" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-surface/85 via-surface/70 to-surface/95" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="mb-16 lg:mb-20">
-              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">Technology</div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-foreground mb-4">The tools we reach for.</h2>
               <p className="text-lg text-foreground-muted max-w-xl">Pragmatic choices, not resume-driven development.</p>
             </div>
@@ -367,13 +372,12 @@ export default function Home() {
           ══════════════════════════════════════ */}
       <section className="relative py-24 lg:py-32 border-t border-stroke-subtle overflow-hidden">
         <div className="absolute inset-0">
-          <Image src={images.darkArchitecture} alt="" fill className="object-cover opacity-[0.1]" unoptimized />
+          <Image src={images.darkArchitecture} alt="" fill className="object-cover opacity-[0.1]" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-surface/85 via-surface/80 to-surface/95" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="mb-16 lg:mb-20">
-              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">The Difference</div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-foreground mb-4">What clients notice after working with us for a while.</h2>
               <p className="text-lg text-foreground-muted max-w-xl">Not our words. Patterns we have noticed across 40+ projects.</p>
             </div>
@@ -398,7 +402,6 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="mb-16 lg:mb-20">
-              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">Testimonials</div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-foreground mb-4">What our partners say.</h2>
               <p className="text-lg text-foreground-muted max-w-xl">Not our words. From agency founders and product leads we have built for.</p>
             </div>
@@ -467,7 +470,7 @@ export default function Home() {
           ══════════════════════════════════════ */}
       <section className="relative py-32 lg:py-48 border-t border-stroke-subtle">
         <div className="absolute inset-0">
-          <Image src={images.gradientFluid} alt="" fill className="object-cover opacity-30" unoptimized />
+          <Image src={images.gradientFluid} alt="" fill className="object-cover opacity-30" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/80 to-surface" />
 

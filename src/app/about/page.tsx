@@ -5,17 +5,27 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { images } from '@/data/images';
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'About Ragen — Software Development Company',
   description:
-    'Ragen is a software studio built on one principle: engineers only. Every person who writes code has at least six years of experience. No juniors touching production code.',
+    'Ragen is a software development company built on one principle: engineers only. Every developer has 6+ years of experience. Learn about our story, principles, and team.',
   alternates: {
     canonical: '/about',
   },
   openGraph: {
-    title: 'About Ragen - Software Studio',
+    title: 'About Ragen — Software Development Company',
     description:
-      'A software studio built on one principle: engineers only. Senior developers, direct communication, and code that lasts.',
+      'A software development company built on one principle: engineers only. Senior developers, direct communication, and code that lasts.',
     url: 'https://ragen.org/about',
+    siteName: 'Ragen',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/images/eloxee-1.jpg', width: 1200, height: 630, alt: 'Ragen — Software Development Company' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ragen — Software Development Company',
+    description: 'Premium software development. Web apps, SaaS, mobile, AI, cloud. Senior engineers, predictable delivery.',
+    images: ['/images/eloxee-1.jpg'],
   },
 };
 
@@ -32,13 +42,12 @@ export default function About() {
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-28">
         <div className="absolute inset-0">
-          <Image src={images.darkWorkspace} alt="" fill className="object-cover opacity-30" unoptimized />
+          <Image src={images.darkWorkspace} alt="" fill className="object-cover opacity-30" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/70 to-surface/95" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-foreground-muted mb-6">About the Studio</div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[0.96] tracking-[-0.03em] text-foreground mb-8 text-balance">
                 We started this because the{' '}
                 <span className="gradient-text">status quo</span> was not good enough.
@@ -66,7 +75,7 @@ export default function About() {
             <ScrollReveal delay={0.1}>
               <div>
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-8 border border-stroke">
-                  <Image src={images.codeAbstract} alt="" width={600} height={450} className="w-full h-full object-cover" unoptimized />
+                  <Image src={images.codeAbstract} alt="" width={600} height={450} className="w-full h-full object-cover" />
                 </div>
                 <h2 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-6">What we built instead.</h2>
                 <div className="text-foreground-muted leading-relaxed space-y-4">
@@ -82,7 +91,7 @@ export default function About() {
       {/* Principles */}
       <section className="relative py-16 lg:py-24 border-t border-stroke-subtle overflow-hidden">
         <div className="absolute inset-0">
-          <Image src={images.gradientFluid} alt="" fill className="object-cover opacity-[0.1]" unoptimized />
+          <Image src={images.gradientFluid} alt="" fill className="object-cover opacity-[0.1]" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-surface/85 via-surface/80 to-surface/95" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
@@ -109,7 +118,7 @@ export default function About() {
       {/* Team */}
       <section className="relative py-16 lg:py-24 border-t border-stroke-subtle overflow-hidden">
         <div className="absolute inset-0">
-          <Image src={images.darkArchitecture} alt="" fill className="object-cover opacity-[0.08]" unoptimized />
+          <Image src={images.darkArchitecture} alt="" fill className="object-cover opacity-[0.08]" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-surface/85 via-surface/80 to-surface/95" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
@@ -127,16 +136,14 @@ export default function About() {
               { name: 'Engineering', role: 'Frontend & Design Systems' },
             ].map((member, i) => (
               <ScrollReveal key={member.name} delay={i * 0.1}>
-                <div className="rounded-2xl border border-stroke bg-surface-secondary/50 overflow-hidden group hover:border-stroke-highlight transition-colors">
+                <div className="rounded-2xl border border-stroke bg-surface-secondary/50 overflow-hidden group hover:border-accent-blue/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-black/20">
                   <div className="aspect-[3/2] overflow-hidden">
                     <Image
-                      src={i === 0 ? images.darkWorkspace : i === 1 ? images.codeAbstract : i === 2 ? images.serverRoom : images.designAbstract}
-                      alt=""
+                      src={i === 0 ? images.darkWorkspace : i === 1 ? images.circuitBoard : i === 2 ? images.serverRoom : images.designAbstract}
+                      alt={member.name}
                       width={300}
                       height={200}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      unoptimized
-                    />
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="p-5">
                     <h3 className="font-display font-semibold text-foreground mb-1">{member.name}</h3>
